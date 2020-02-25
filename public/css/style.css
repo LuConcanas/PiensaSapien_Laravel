@@ -1,0 +1,449 @@
+*{margin: 0 auto;}
+body{width: 100%;
+/* height: 100vh; (esto no sirvió) */
+background-image: url('../img/background.jpg');
+font-family: "Alata","sans-serif" ;}
+
+/*el nav*/
+/*el nav*/
+
+header{
+background-color: rgb(212, 53, 53,.9);
+height: 50px;
+width: 100%;
+}
+#btn-menu{
+  display: none;
+}
+header label{
+  display: none;
+  width: 40px;
+
+}
+header label img:hover{
+  cursor: pointer;
+  background: rgba(0,0,0,0.3);
+}
+
+.menu nav{
+transition: 0.5s;
+}
+
+.menu ul{
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+.menu li{
+  margin: 0;
+  justify-content: flex-start;
+}
+.menu li:hover{
+  background: rgba(0,0,0,0.3)
+}
+.menu li a{
+  display: block;
+  padding: 15px 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/*querie del nav*/
+@media (max-width:750px){
+
+      header label{
+        display:block;
+        margin: 0;
+        padding-left: 10px;
+        padding-top: 5px;
+      }
+        .menu nav{
+        position: absolute;
+        z-index: 400;
+        background: rgb(212, 53, 53,.9);
+        width: 70%;
+         margin-left: -70%;
+      }
+       .menu ul{
+        flex-direction: column;
+      }
+      .menu ul li{
+        border-top:1px solid #fff;
+      }
+      #btn-menu:checked ~ nav{
+        margin: 0;
+      }
+}
+
+
+/*  REGISTRO.HTML */
+.seccion{
+  width: 50%;
+padding: 15px;
+border: 1px solid #fff;
+margin-top: 30px;
+background-color: rgba(255,255,255,.8);}
+
+.registro h1{
+  font-size: 10px;
+}
+
+.subzona div {
+  margin: 10px;
+  padding: 2px;
+}
+#botEnviar {
+color:#000;
+background-color:#fff ;
+}
+
+#botonFacebook {
+  width: 50%;
+  padding: 7px;
+  color:#000;
+  background-color:#fff ;
+}
+@media (min-width:1050px){/*desktop*/
+  .registro {
+    width: 36vw;
+  }
+}
+      /*TERMINA REGISTRO.HTML*/
+
+      /*LOGIN.HTML*/
+.login h1 {
+  font-size: 10px;
+}
+#botIngresar {
+  width: 50%;
+  color:#000;
+  background-color:#fff ;
+}
+#BotonFacebookIngreso {
+  width: 50%;
+  padding: 7px;
+  color:#000;
+  background-color:#fff ;
+}
+@media (min-width:1050px){/*desktop*/
+  .login {
+    width: 36vw;
+  }
+  #BotonFacebookIngreso{
+    width: 30vw;
+  }
+}
+      /*TERMINA LOGIN.HTML*/
+
+      /*HOME.HTML */
+      #HomeSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .titulo{
+        padding-top: 19vh;
+        padding-bottom: 10vh;
+      }
+      .titulo img{
+        width:55vw;
+      }
+      #infoMasBotonJ{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      #botonJugar button{
+        width: 15vmax;
+        height: 15vmin;
+        padding: 1rem;
+        background-color:#fff;
+        border:none;
+        outline-style: none;
+        box-shadow: 0 3vmin #959191;
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+        margin-bottom:3rem;
+        cursor: pointer;
+
+      }
+      #botonJugar button a {
+        width: 40.5vmax;
+        height: 12vmin;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #FF8000;
+        font-family: "Amatic SC", "sans-serif";
+        font-size:8vmin;
+        padding-left: .5vmax;
+        margin-top: -1vmin;
+      }
+      #botonJugar button:active{
+        box-shadow: 0 .5vmin #959191;
+        transform: translateY(3vmin);
+      }
+
+
+      #infoMasBotonJ article p {
+        width: 80%;
+        font-family: "Amatic SC", "sans-serif";
+        font-size:4vmax;
+        background-color: rgba(255,255,255,.9);
+        padding: 1.5vw;
+        border-radius: 1vw;
+        margin-top: 10%;
+        margin-left:10%;
+        margin-bottom: 10%
+      }
+     /*HASTA ACA HOME*/
+
+     /*Usuario.html*/
+     #perfil{
+      width: 100%;
+      height: 100vmax;
+      margin: 0;
+      display: flex;
+      flex-direction:column;
+      align-items: center;
+      padding-top: 1rem;
+      }
+
+    .circulo {
+         width: 30vmax;
+         height: 30vmax;
+         border-radius: 50%;
+         background: white;
+         padding: 7vmax;
+         margin-top: 3.5vmax;
+         border:1 solid grey;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+    }
+
+
+    .logo{
+      margin-top: 1vmax;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: .2vmax solid black;
+      border-radius: 50%;}
+
+      @font-face {
+   font-family: 'Penguin-Regular';
+   src: local('Penguin-Regular'),url('../fuentes/Penguin-Regular.ttf');
+   font-weight: normal;
+   font-style: normal;
+  }
+
+    .nombre{
+    text-align: center;
+    font-family: 'Penguin-Regular';
+    font-size:3vmax;
+    color: #D43535;}
+
+    .puntos{text-align: center;
+      margin-top: 0.7vmax;
+      font-size: 1.7vmax;
+      font-family: 'Alata',sans-serif;
+      color:#D43535;
+    }
+   /*hasta aca usuario.html*/
+
+   /*Empieza el ranking*/
+   .rankingSection{
+        width: 24.5vmax;
+        max-height: 70rem;
+        margin-top: 3.5vmax;
+        margin-bottom: 3.5vmax;
+        background-color: rgba(255,255,255,.9);
+        border: grey .2vmax solid;
+        border-radius: .7vmax;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+      }
+      .tituloRanking, .puesto:before{
+        font-family: "Penguin-Regular", "sans-serif";
+        font-size: 3.5vmax;
+        font-weight: bold;
+        padding-left: .7vmax;
+        color: #D43535;
+      }
+      .puesto{
+        box-sizing: border-box;
+        width: 90%;
+        background-color: #e1d1dd;
+        min-height: 5.5vmax;
+        margin-left: 5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+        margin: 2% auto;
+      }
+    /*aca los bordes y los puestos del ranking*/
+      #p1:before{
+        content: "1";
+        border-left: .2vmax solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #p2:before{
+        content: "2";
+        border-left: .2vmax solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #p3:before{
+        content: "3";
+        border-left: .2vmax solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #p4:before{
+        content: "4";
+        border-left: .2vmax solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #p5:before{
+        content: "5";
+        border-left: .2vmax solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .avatar{
+       margin: 0 0 0 .5vmax;;
+       display: flex;
+       align-items: center;
+      }
+      .avatar img{
+        width: 4.4vmax;
+        height: 4.4vmax;
+        border-radius: 50%;
+      }
+      .datos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      ._nombre{
+        font-size: 1.5vmax;
+        font-family: 'Alata',sans-serif;
+        color: #1a997b;
+      }
+  
+  
+  
+      /*JUEGO.HTML*/
+
+   .puntajes
+   {
+    background-color: #000;
+    border: 2px blue solid;
+    font-size: 15px;
+   }
+
+   .preguntas
+   {
+    background-color: #000;
+    border: 2px blue solid;
+    color: white;
+    font-size: 14px;
+   }
+
+   .botonjugar
+   {
+    border: 2px blue solid;
+    color: blue;
+    font-size: 15px;
+   }
+
+   /*HASTA ACA JUEGO-HTML*/
+
+
+   /*FAQ style*/
+        #bodyFAQ{
+        box-sizing:inherit;
+      }
+
+        .sectionFaq {
+        width: 80%;
+        height: 100vh;
+        font-family: Amatic SC,sans-serif;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 5rem;
+      }
+      .container{
+        width: 100%;
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+
+      }
+      .accordion-item{
+        background-color: rgba(255,255,255,0.8);
+        border-radius: .4rem;
+        margin-bottom: 1rem;
+        padding: 1rem;
+
+      }
+      .accordion-link{
+        font-size: 1.6rem;
+        color: black;
+        text-decoration: none;
+        width: 100%;
+        padding: 1rem 0;
+      }
+      .respuesta{
+        max-height: 0;
+        overflow:hidden;
+        position: relative;
+        transition:.6s;
+
+      }
+      .respuesta p{
+
+        color: rgba(0, 0, 0, 1);
+        font-size: 2rem;
+        padding: 2rem;
+
+      }
+      .accordion-item:target .respuesta{
+        max-height: 25rem;
+      }
+      /*HASTA ACA FAQ STYLE*/
+
+      /*CONTACTO.HTML*/
+      .datos{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: blue;
+        text-decoration: none;
+      }
+      .com{font-family: times-new-roman,sans-serif;
+      padding: 3px;
+      width: 100%;
+      }
+      .menu_bar{
+        display: none;
+      }
+

@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// RUTAS JUEGO
+Route::get("/juego", "JuegoController@CargaJuego");
+Route::get("/resultados", "JuegoController@Resultados");
+
+
+// RUTAS PREGUNTAS (ABM)
+Route::get("/modificar", "PreguntasController@Modificar");
+Route::get("/nueva", "PreguntasController@Alta");
+
