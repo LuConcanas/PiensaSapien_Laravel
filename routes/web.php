@@ -25,3 +25,7 @@ Route::get("/resultados", "JuegoController@Resultados");
 Route::get("/modificar", "PreguntasController@Modificar");
 Route::get("/nueva", "PreguntasController@Alta");
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
