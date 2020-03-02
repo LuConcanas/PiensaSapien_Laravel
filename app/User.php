@@ -17,7 +17,7 @@ class User extends Authenticatable
      */
    //Agregue 'avatar' para que se pueda escribir en la db
    protected $fillable = [
-    'name', 'email', 'password','avatar',
+    'userName', 'email', 'password','avatar',
 ];
 
     /**
@@ -37,4 +37,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //relacion con tabla de quizzes resueltos.
+    public function quizz_user(){
+      return $this->belongsToMany(Quizz::class,'quizz_user','idUser','idQuizz');
+    }
+
+    //relacion de autoría de un quizz x.
+    public function quizz(){
+      return $this->hasMany('App\Quizz');
+    }
+
+
+
+
+
+
 }

@@ -13,10 +13,12 @@ class CreateCategoriasTable extends Migration
      */
     public function up()
     {
-        Schema::create('categorias', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
-        });
+      Schema::create('categorias', function (Blueprint $table) {
+          $table->bigIncrements('id');
+          $table->string('nameCategoria');
+          $table->timestamps();
+
+      });
     }
 
     /**
