@@ -33,24 +33,28 @@ class usersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-   
-      
-//
-    public function store(Request $req){ 
 
-         $nuevoUsuario = new User();
-        //Armo la ruta de la imagen  
-        // $ruta = $req->file('avatar')->store('public');
-        // $nombreDeArchivo = basename($ruta);
+
+//
+    public function store(Request $req){
+        //instancio User
+        $nuevoUsuario = new User();
+        //Armo la ruta de la imagen
+        $ruta = $req->file('avatar')->store('public');
+        $nombreDeArchivo = basename($ruta);
 
          //Una vez hecha la validacion armo el usuario con
-         // los datos del registro. 
-         $nuevoUsuario->name = $req['name'];
+         // los datos del registro.
+         $nuevoUsuario->avatar = $nombreDeArchivo;
+         $nuevoUsuario->userName = $req['name'];
          $nuevoUsuario->email = $req['email'];
          $nuevoUsuario->password = $req['password'];
-        // $nuevoUsuario->avatar = $nombreDeArchivo;
+
          //Con save() guardo el user en la db
          $nuevoUsuario->save();
+
+
+
             }
 
     /**

@@ -63,7 +63,7 @@
                       {{-- Campo para agregar avatar--}}
                         <div class="form-group row">
                             <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('Avatar') }}</label>
-                        
+
                             <div class="col-md-6">
                                <input type="file" name="avatar" id="">
                             </div>
