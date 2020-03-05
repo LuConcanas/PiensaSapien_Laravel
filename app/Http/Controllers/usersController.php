@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Auth\RegisterConstroller;
+//añado use auth para ver si esta logueado el usuario
+use Auth;
 class usersController extends Controller
 {
     /**
@@ -56,6 +58,24 @@ class usersController extends Controller
 
 
             }
+      public function buscarUsuarioLogueado(){
+        //Traigo todos los ususarios de la db y  los almaceno en la var $usuarios
+        $usuarios= User::All();
+        //Recorro todos los ususarios que traje de db
+        foreach ($usuarios as $usuario) {
+        //veo si esta logueado,si el usuario no esta loguado devuelve null
+          $usuario = Auth::user();
+          //si el ususario no devuelve null lo retorna
+          if($usuario!=null){
+
+            return view("vistaUsuario",compact('usuario'));
+          }else{
+            return view("register");
+          }
+        }
+
+      }
+
 
     /**
      * Display the specified resource.

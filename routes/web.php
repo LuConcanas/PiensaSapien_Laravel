@@ -29,3 +29,6 @@ Route::get("/nueva", "PreguntasController@Alta");
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//RUTA VISTA USUARIO
+Route::get('/vistaUsuario', 'usersController@buscarUsuarioLogueado');
