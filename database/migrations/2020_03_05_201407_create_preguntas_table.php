@@ -19,9 +19,8 @@ class CreatePreguntasTable extends Migration
           $table->foreign('idQuizz')->references('id')->on('quizzes');
           $table->string('pregunta');
           $table->string('respuestaCorrecta');
-          $table->string('respuestaErronea1');
-          $table->string('respuestaErronea2');
-          $table->string('respuestaErronea3');
+          $table->string('imagen');
+          $table->string('descripcion');
           $table->timestamps();
 
       });
