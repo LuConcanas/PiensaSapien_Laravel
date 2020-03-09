@@ -1,4 +1,4 @@
-@extends('/layout/plantillaGeneral');
+@extends('/layout/plantillaGeneral')
 @section("Principal")
   <section class="sectionFaq">
       <div class="container">

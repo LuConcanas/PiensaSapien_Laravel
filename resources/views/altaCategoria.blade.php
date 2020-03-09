@@ -1,5 +1,5 @@
-@extends("/layout/plantilla");
-@section("Principal");
+@extends("/layout/plantillaGeneral")
+@section("Principal")
 
 <!-- ALTA CATEGORIA -->
 
@@ -44,6 +44,6 @@
 
 
 
-  
 
-@endsection;
+
+@endsection

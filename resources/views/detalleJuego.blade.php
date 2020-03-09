@@ -1,7 +1,7 @@
 
 
-@extends("/layout/plantillaGeneral");
-@section("Principal");
+@extends("/layout/plantillaGeneral")
+@section("Principal")
 
     <!-- HISTORIAL JUEGO DEL USUARIO -->
       <article class="container-fluid">

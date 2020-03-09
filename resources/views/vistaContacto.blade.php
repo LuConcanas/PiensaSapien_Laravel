@@ -1,4 +1,4 @@
-@extends('/layout/plantillaGeneral');
+@extends('/layout/plantillaGeneral')
 @section("Principal")
   <main class="contacto">
       <h1 class="seccion">Para contactarnos o enviar feedback:</h1>
@@ -8,7 +8,7 @@
           <h2 style="margin-bottom:10px;">Dejanos un comentario aqui:</h2><textarea name="" cols="92" rows="15" class="com"></textarea>
           <br>
           <br>
-          <input class="btn btn-dark" type="button" value="Enviar">     
+          <input class="btn btn-dark" type="button" value="Enviar">
         </article>
     </main>
     @endsection

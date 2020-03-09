@@ -1,5 +1,5 @@
-@extends("/layout/plantilla");
-@section("Principal");
+@extends("/layout/plantillaGeneral")
+@section("Principal")
 
         <!-- GIF APLAUSOS -->
         <article class="container">

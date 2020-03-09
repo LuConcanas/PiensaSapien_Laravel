@@ -1,5 +1,5 @@
-@extends("/layout/plantilla");
-@section("Principal");
+@extends("/layout/plantillaGeneral")
+@section("Principal")
 
 <!-- ALTA JUEGO -->
 
@@ -14,8 +14,8 @@
   <!-- CUERPO -->
 
     <!-- CARGAR CATEGORIA -->
-        <article class="container preguntas"> 
-        
+        <article class="container preguntas">
+
             <div class= "row p-1 row justify-content-center h6">
                 CATEGORIA
             </div>
@@ -49,7 +49,7 @@
             </div>
         </article>
 
-    <article class="container preguntas">    
+    <article class="container preguntas">
 
         <!-- CARGA NOMBRE JUEGO -->
             <div class= "row p-1 justify-content-center h6">
@@ -78,6 +78,6 @@
         </article>
         <br>
 
-  
+
 
 @endsection;

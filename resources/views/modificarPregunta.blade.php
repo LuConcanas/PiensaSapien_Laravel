@@ -1,5 +1,5 @@
-@extends("/layout/plantilla");
-@section("Principal");
+@extends("/layout/plantillaGeneral")
+@section("Principal")
 
         <!-- MODIFICAR PREGUNTAS -->
         <article class="container preguntas">
@@ -34,6 +34,6 @@
                 </form>
               </article>
           <br>
-  
+
 
 @endsection;

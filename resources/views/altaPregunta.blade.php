@@ -1,5 +1,5 @@
-@extends("/layout/plantilla");
-@section("Principal");
+@extends("/layout/plantillaGeneral")
+@section("Principal")
 
 <!-- ALTA PREGUNTA -->
 
@@ -35,7 +35,7 @@
             <input class ="col-12 text-center"  type="file" name="imagen" id="imagen">
           </form>
         </div>
-              
+
 
 
             <div class= "row p-2 text-left">
@@ -75,6 +75,6 @@
         </article>
           <br>
 
-  
 
-@endsection;
+
+@endsection
