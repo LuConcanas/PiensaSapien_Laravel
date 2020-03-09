@@ -44,18 +44,18 @@ class usersController extends Controller
         //Armo la ruta de la imagen
         $ruta = $req->file('avatar')->store('public/avatars');
         $nombreDeArchivo = basename($ruta);
-        //if($req->file('avatar') ) {
+          //if($req->file('avatar') ) {
           //$imageName = time().'.'.request()->avatar->getClientOriginalExtension();
           //$imagen =$req->file('avatar');
           //$imagen->getClientOriginalExtension();
          // $imageName =$req->avatar->getClientOriginalName();
-        // $req->avatar->move(public_path('avatars'), $imageName);
-     // }
+         // $req->avatar->move(public_path('avatars'), $imageName);
+         // }
 
          //Una vez hecha la validacion armo el usuario con
          // los datos del registro.
          $nuevoUsuario->avatar = $nombreDeArchivo;
-         //$nuevoUsuario->userName = $req['name'];
+         $nuevoUsuario->userName = $req['name'];
          $nuevoUsuario->email = $req['email'];
          $nuevoUsuario->password = $req['password'];
 
