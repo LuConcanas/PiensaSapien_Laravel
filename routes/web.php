@@ -10,17 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
+//Rutas del Index(Este era el home de la etapa anterior)
+Route::get('/', "indexController@verIndex");
+//RUTA CONTACTO
+Route::get('/contacto', "indexController@verContacto");
+//RUTA FAQ
+Route::get('/FAQ', "indexController@verFAQ");
+//RUTA Registro
+Route::get('/registro', "indexController@verRegistro");
 // RUTAS JUEGO
 Route::get("/juego", "JuegoController@CargaJuego");
 Route::get("/resultados", "JuegoController@Resultados");
-
-
 // RUTAS PREGUNTAS (ABM)
 Route::get("/modificar", "PreguntasController@Modificar");
 Route::get("/nueva", "PreguntasController@Alta");

@@ -1,4 +1,4 @@
-@extends("/layout/plantilla")
+@extends("/layout/plantillaGeneral")
 @section("Principal")
 
 

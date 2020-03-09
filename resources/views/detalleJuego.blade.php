@@ -1,6 +1,6 @@
 
 
-@extends("/layout/plantilla");
+@extends("/layout/plantillaGeneral");
 @section("Principal");
 
     <!-- HISTORIAL JUEGO DEL USUARIO -->
@@ -123,5 +123,3 @@
       </article>
 
 @endsection;
-
-
