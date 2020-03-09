@@ -13,7 +13,7 @@ class User extends Authenticatable
 
   //public $table = "users";
     public $primaryKey = 'idUser';
-
+    public $guarded = [];
 
     /**
      * The attributes that are mass assignable.
@@ -21,9 +21,9 @@ class User extends Authenticatable
      * @var array
      */
    //Agregue 'avatar' para que se pueda escribir en la db
-   protected $fillable = [
-    'userName', 'email', 'password','avatar',
-];
+   //protected $fillable = [
+    //'userName', 'email', 'password','avatar',
+//];
 
     /**
      * The attributes that should be hidden for arrays.

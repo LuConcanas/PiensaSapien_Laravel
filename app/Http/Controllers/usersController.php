@@ -42,13 +42,20 @@ class usersController extends Controller
         //instancio User
         $nuevoUsuario = new User();
         //Armo la ruta de la imagen
-        $ruta = $req->file('avatar')->store('public');
+        $ruta = $req->file('avatar')->store('public/avatars');
         $nombreDeArchivo = basename($ruta);
+        //if($req->file('avatar') ) {
+          //$imageName = time().'.'.request()->avatar->getClientOriginalExtension();
+          //$imagen =$req->file('avatar');
+          //$imagen->getClientOriginalExtension();
+         // $imageName =$req->avatar->getClientOriginalName();
+        // $req->avatar->move(public_path('avatars'), $imageName);
+     // }
 
          //Una vez hecha la validacion armo el usuario con
          // los datos del registro.
          $nuevoUsuario->avatar = $nombreDeArchivo;
-         $nuevoUsuario->userName = $req['name'];
+         //$nuevoUsuario->userName = $req['name'];
          $nuevoUsuario->email = $req['email'];
          $nuevoUsuario->password = $req['password'];
 
@@ -66,14 +73,14 @@ class usersController extends Controller
         //veo si esta logueado,si el usuario no esta loguado devuelve null
           $usuario = Auth::user();
           //si el ususario no devuelve null lo retorna
-          if($usuario!=null){
 
-            return view("vistaUsuario",compact('usuario'));
+          if($usuario!=null){
+            return view('vistaUsuario',compact('usuario'));
           }else{
             return view("register");
           }
         }
-
+        
       }
 
 
@@ -121,4 +128,28 @@ class usersController extends Controller
     {
         //
     }
+/*public function editUser($usuario)
+{
+  $usuario = User::find($usuario);
+  
+  return view('/formModificarDatos',['usuario' => $usuario]);
+
+}*/
+public function updateUser(Request $req, $id){
+
+  $usuario = User::find($id);
+
+  $ruta = $req->file('avatar')->store('public/avatars');
+  $nombreDeArchivo = basename($ruta);
+
+  $usuario->email= $req->input('email');
+  $usuario->userName= $req->input('userName');
+  $usuario->avatar = $nombreDeArchivo;
+  
+  $usuario->save();
+  return redirect('/vistaUsuario')->with( 'Usuario '.$usuario->userName.' modificado con éxito');
+  
+            
+}
+   
 }

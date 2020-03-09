@@ -32,5 +32,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//RUTA VISTA USUARIO
+//RUTAS USUARIO
 Route::get('/vistaUsuario', 'usersController@buscarUsuarioLogueado');
+Route::get('/vistaUsuario/{{usuario->idUser}}',  function($id){
+$vac = compact('idUser');
+    return view('/formModificarDatos', $vac );
+});
+Route::post('/modificarDatos/{{idUser}}', 'usersController@updateUser');
