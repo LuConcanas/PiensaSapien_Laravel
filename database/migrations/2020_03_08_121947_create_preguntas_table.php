@@ -13,15 +13,16 @@ class CreatePreguntasTable extends Migration
      */
     public function up()
     {
-      Schema::create('preguntas', function (Blueprint $table) {
-          $table->bigIncrements('id');
+      Schema::create('preguntas', function (Blueprint $table) 
+      {
+          $table->bigIncrements("id");
+          $table->timestamps();
           $table->unsignedBigInteger('idQuizz');
           $table->foreign('idQuizz')->references('id')->on('quizzes');
-          $table->string('pregunta');
-          $table->string('respuestaCorrecta');
-          $table->string('imagen');
-          $table->string('descripcion');
-          $table->timestamps();
+          $table->string("imagen");
+          $table->string("descripcion");
+          $table->string("respuesta");
+          $table->string("dificultad");
 
       });
     }
@@ -36,3 +37,5 @@ class CreatePreguntasTable extends Migration
         Schema::dropIfExists('preguntas');
     }
 }
+
+

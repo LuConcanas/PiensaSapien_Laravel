@@ -349,7 +349,7 @@ background-color:#fff ;
   
   
   
-      /*JUEGO.HTML*/
+/*JUEGO.HTML*/
 
    .puntajes
    {
@@ -362,7 +362,7 @@ background-color:#fff ;
    {
     background-color: #000;
     border: 2px blue solid;
-    color: white;
+    color: rgb(46, 207, 24);
     font-size: 14px;
    }
 
@@ -373,7 +373,7 @@ background-color:#fff ;
     font-size: 15px;
    }
 
-   /*HASTA ACA JUEGO-HTML*/
+/*HASTA ACA JUEGO-HTML*/
 
 
    /*FAQ style*/

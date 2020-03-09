@@ -23,8 +23,10 @@ Route::get("/juego", "JuegoController@CargaJuego");
 Route::get("/resultados", "JuegoController@Resultados");
 // RUTAS PREGUNTAS (ABM)
 Route::get("/modificar", "PreguntasController@Modificar");
-Route::get("/nueva", "PreguntasController@Alta");
-
+Route::get("/nuevaPregunta", "PreguntasController@AltaPregunta");
+Route::get("/nuevoJuego", "PreguntasController@AltaJuego");
+Route::get("/agregarCategoria", "PreguntasController@AltaCategoria_GET");
+Route::post("/agregarCategoria", "PreguntasController@NuevaCategoria_POST");
 
 Auth::routes();
 

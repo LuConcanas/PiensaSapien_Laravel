@@ -1,35 +1,69 @@
 @extends("/layout/plantilla");
 @section("Principal");
 
-        <!-- ALTA PREGUNTA -->
-        <article class="container preguntas">
-            <div class= "row p-2">
-              <div> PREGUNTA </div>
-            </div>
-            <div class= "row justify-content-center">
-                <input class ="col-10 text-center"  type="text" name="pregunta" id="pregunta">
-            </div>
-            <div class= "row p-1 justify-content-center">
-                    <div> RESPUESTAS </div>
-            </div>
-            <div class= "row p-1 justify-content-center">
-                <input class ="col-3 text-center"  type="text" name="respuesta1" id="respuesta1">
-                <input class ="col-3 text-center"  type="text" name="respuesta2" id="respuesta2">
-                <input class ="col-3 text-center"  type="text" name="respuesta3" id="respuesta3">
-                <input class ="col-3 text-center"  type="text" name="respuesta4" id="respuesta4">
-            </div>
-            <div class= "row p-1 justify-content-center">
-                    <div> RESPUESTA CORRECTA </div>
-            </div>
-            <div class= "row p-1 justify-content-center">
-                <div class="col-3 text-center text-success"><input type="radio" name="primero" value="2">  </div>
-                <div class="col-3 text-center text-success"><input type="radio" name="primero" value="2">  </div>
-                <div class="col-3 text-center text-success"><input type="radio" name="primero" value="3">  </div>
-                <div class="col-3 text-center text-success"> <input type="radio" name="primero" value="4">  </div>
-            </div>
-          </article>
+<!-- ALTA PREGUNTA -->
 
-          <article class= "container">
+  <!-- TITULO -->
+    <article class="container preguntas">
+      <div class= "row p-2 h1 row justify-content-center">
+        CARGAR NUEVA IMAGEN
+      </div>
+    </article>
+
+
+  <!-- CUERPO -->
+    <article class="container preguntas">
+
+
+      <!-- ELEGIR JUEGO -->
+        <div class= "row p-2 row justify-content-center">
+          SELECIONAR JUEGO
+        </div>
+
+        <div class= "row p-1 justify-content-center">
+          <select class= "" name="juegos" id="juego">
+            <option value="1"> LOS SIMPSOM </option>
+          </select>
+        </div>
+
+      <!-- CARGA IMAGEN -->
+        <div class= "row p-2 row justify-content-center">
+          IMAGEN
+        </div>
+        <div class= "row justify-content-center">
+          <form method="post" action="upload.php" enctype="multipart/form-data" id="uploadForm">
+            <input class ="col-12 text-center"  type="file" name="imagen" id="imagen">
+          </form>
+        </div>
+              
+
+
+            <div class= "row p-2 text-left">
+            <div> DESCRIPCION </div>
+            </div>
+            <div class= "row p-1 justify-content-center">
+                <input class ="col-3 text-center"  type="text" name="respuesta" id="respuesta">
+            </div>
+
+            <div class= "row p-2 text-left">
+            <div class= > RESPUESTA </div>
+            </div>
+            <div class= "row p-1 justify-content-center">
+                <input class ="col-3 text-center"  type="text" name="respuesta" id="respuesta">
+            </div>
+
+            <div class= "row p-2">
+            <div> DIFICULTAD </div>
+            </div>
+            <div class= "row p-1 justify-content-center">
+                <input class ="col-3 text-center"  type="text" name="respuesta" id="respuesta">
+            </div>
+        </article>
+
+        <article class= "container">
+
+
+
                 <!-- BOTON GUARDAR -->
                   <form action= "juego" method="GET" class = "row justify-content-center p-1">
                     <button type="submit" class="btn btn-success col-3 botonjugar "> <b>GUARDAR</b> </button>
@@ -38,7 +72,7 @@
                 <form action="Home.html" method="GET" class="row justify-content-center p-2">
                   <button type="submit" class="btn btn-success col-3 botonjugar"> <b>HOME</b></a> </button>
                 </form>
-              </article>
+        </article>
           <br>
 
   
