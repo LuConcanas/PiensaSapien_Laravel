@@ -29,7 +29,7 @@
         <li><a href={{url('/')}} style="text-decoration:none;">Home</a></li>
         <li><a href={{url('/contacto')}} style="text-decoration:none;">Contacto</a></li>
         <li><a href={{url('/FAQ')}} style="text-decoration:none;">F.A.Q.</a></li>
-        <li><a href={{url('/juego')}} style="text-decoration:none;">Juego</a></li>
+        <li><a href={{url('/quizzes')}} style="text-decoration:none;">Juego</a></li>
       <!-- <?php if (isset($_SESSION)):?>
             <li><a href={{url('/register')}} style="text-decoration:none;">Registro</a></li>
              <li><a href={{url('/login')}} style="text-decoration:none;">Iniciar sesion</a></li>

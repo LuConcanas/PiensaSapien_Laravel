@@ -23,5 +23,7 @@ class indexController extends Controller
       return view("auth/register");
     }
 
+    
+
 
 }

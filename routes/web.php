@@ -19,6 +19,7 @@ Route::get('/FAQ', "indexController@verFAQ");
 //RUTA Registro
 Route::get('/registro', "indexController@verRegistro");
 // RUTAS JUEGO
+Route::get("/quizzes", "JuegoController@verSelectQuizz");
 Route::get("/juego", "JuegoController@CargaJuego");
 Route::get("/resultados", "JuegoController@Resultados");
 // RUTAS PREGUNTAS (ABM)

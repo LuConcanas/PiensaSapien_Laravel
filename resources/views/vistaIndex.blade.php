@@ -16,7 +16,7 @@
         </article>
         <article class="">
             <div id="botonJugar" class="">
-              <button type="submit" name="button"> <a href={{url('/juego')}}>Jugar</a> </button>
+              <button type="submit" name="button"> <a href={{url('/quizzes')}}>Jugar</a> </button>
             </div>
           </article>
         </div>
