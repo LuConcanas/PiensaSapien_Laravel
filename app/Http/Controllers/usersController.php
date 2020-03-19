@@ -17,7 +17,14 @@ class usersController extends Controller
     public function index()
     {
         //
+        $usuario = Auth::user();
+        return view('vistaUsuario',
+                [
+                    'usuario'=>$usuario
+                ]
+            );
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -41,20 +48,7 @@ class usersController extends Controller
     public function store(Request $req){
         //instancio User
         $nuevoUsuario = new User();
-        //Armo la ruta de la imagen
-        $ruta = $req->file('avatar')->store('public/avatars');
-        $nombreDeArchivo = basename($ruta);
-          //if($req->file('avatar') ) {
-          //$imageName = time().'.'.request()->avatar->getClientOriginalExtension();
-          //$imagen =$req->file('avatar');
-          //$imagen->getClientOriginalExtension();
-         // $imageName =$req->avatar->getClientOriginalName();
-         // $req->avatar->move(public_path('avatars'), $imageName);
-         // }
-
-         //Una vez hecha la validacion armo el usuario con
-         // los datos del registro.
-         $nuevoUsuario->avatar = $nombreDeArchivo;
+       
          $nuevoUsuario->userName = $req['name'];
          $nuevoUsuario->email = $req['email'];
          $nuevoUsuario->password = $req['password'];
@@ -101,9 +95,11 @@ class usersController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
         //
+        $usuario = User::find($id);
+        return view('/formModificarDatos', [ 'usuario'=>$usuario ]);
     }
 
     /**
@@ -141,10 +137,20 @@ public function updateUser(Request $req, $id){
 
   $ruta = $req->file('avatar')->store('public/avatars');
   $nombreDeArchivo = basename($ruta);
+    //if($req->file('avatar') ) {
+    //$imageName = time().'.'.request()->avatar->getClientOriginalExtension();
+    //$imagen =$req->file('avatar');
+    //$imagen->getClientOriginalExtension();
+   // $imageName =$req->avatar->getClientOriginalName();
+   // $req->avatar->move(public_path('avatars'), $imageName);
+   // }
 
+   //Una vez hecha la validacion armo el usuario con
+   // los datos del registro.
+  $usuario->avatar = $nombreDeArchivo;
   $usuario->email= $req->input('email');
   $usuario->userName= $req->input('userName');
-  $usuario->avatar = $nombreDeArchivo;
+  
   
   $usuario->save();
   return redirect('/vistaUsuario')->with( 'Usuario '.$usuario->userName.' modificado con éxito');

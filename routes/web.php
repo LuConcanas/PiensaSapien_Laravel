@@ -34,9 +34,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //RUTAS USUARIO
-Route::get('/vistaUsuario', 'usersController@buscarUsuarioLogueado');
-Route::get('/vistaUsuario/{{usuario->idUser}}',  function($id){
-$vac = compact('idUser');
-    return view('/formModificarDatos', $vac );
-});
-Route::post('/modificarDatos/{{idUser}}', 'usersController@updateUser');
+//Route::get('/vistaUsuario', 'usersController@buscarUsuarioLogueado');
+
+Route::get('/vistaUsuario', 'usersController@index');
+//Route::get('/vistaUsuario/{{usuario->idUser}}',  function($id){
+//$vac = compact('idUser');
+//    return view('/formModificarDatos', $vac );
+//});
+Route::get('/formModificarDatos/{idUser}', 'usersController@edit');
+//Route::post('/modificarDatos', 'usersController@updateUser');
+//Route::post('/modificarDatos', 'usersController@updateUser');
