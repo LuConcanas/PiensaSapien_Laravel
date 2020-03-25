@@ -8,7 +8,7 @@ window.addEventListener('load', function(){
        let arrayDeErrores = [];
        if(inputUserName.value.length < 2){
            arrayDeErrores['name'] = "El nombre de usuario debe tener mas caracteres.";
-           errorNombre.innerText = arrayDeErrores['name'];
+           errorUserName.innerText = arrayDeErrores['name'];
        }
        if(arrayDeErrores === 0){
            registerForm.submit();
