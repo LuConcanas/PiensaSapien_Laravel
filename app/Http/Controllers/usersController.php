@@ -52,7 +52,7 @@ class usersController extends Controller
          $nuevoUsuario->userName = $req['name'];
          $nuevoUsuario->email = $req['email'];
          $nuevoUsuario->password = $req['password'];
-
+        
          //Con save() guardo el user en la db
          $nuevoUsuario->save();
 
@@ -101,7 +101,12 @@ class usersController extends Controller
         $usuario = User::find($id);
         return view('/formModificarDatos', [ 'usuario'=>$usuario ]);
     }
-
+    public function editFoto($id)
+    {
+        //
+        $usuario = User::find($id);
+        return view('/formModificarFoto', [ 'usuario'=>$usuario ]);
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -130,32 +135,49 @@ class usersController extends Controller
   
   return view('/formModificarDatos',['usuario' => $usuario]);
 
-}*/
-public function updateUser(Request $req, $id){
+}*///
 
-  $usuario = User::find($id);
-
-  $ruta = $req->file('avatar')->store('public/avatars');
-  $nombreDeArchivo = basename($ruta);
-    //if($req->file('avatar') ) {
-    //$imageName = time().'.'.request()->avatar->getClientOriginalExtension();
-    //$imagen =$req->file('avatar');
-    //$imagen->getClientOriginalExtension();
-   // $imageName =$req->avatar->getClientOriginalName();
-   // $req->avatar->move(public_path('avatars'), $imageName);
-   // }
+  public function updateUser(Request $req, $id){
+  
+  //  $usuario->avatar = $nombreDeArchivo;
+ //  $usuario = User::find($req->input('idUser'));
+   $usuario = User::find($id);
 
    //Una vez hecha la validacion armo el usuario con
    // los datos del registro.
-  $usuario->avatar = $nombreDeArchivo;
+  //$usuario->avatar = $nombreDeArchivo;
   $usuario->email= $req->input('email');
   $usuario->userName= $req->input('userName');
   
-  
   $usuario->save();
-  return redirect('/vistaUsuario')->with( 'Usuario '.$usuario->userName.' modificado con éxito');
+  return redirect('/vistaUsuario')->with('mensaje', 'Datos  de '.$usuario->userName.' modificados con éxito');;
   
             
 }
-   
+public function updateAvatarUser(request $req, $id){
+
+  $usuario = User::find($id);
+
+
+  $ruta = $req['avatar']->store('public');
+  $nombreDeArchivo = basename($ruta);
+  
+  // if($req->file('avatar') ) {
+   // $nombreDeArchivo = time().'.'.request()->avatar->getClientOriginalExtension();
+    //$imagen =$req->file('avatar');
+   // $imagen->getClientOriginalExtension();
+   // $nombreDeArchivo =$req->avatar->getClientOriginalName();
+    //$req->avatar->move(public_path('avatars'), $nombreDeArchivo);
+    //}
+  /*if($req->file('avatar')){
+    $file = $req->file('avatar');
+    $nombreDeArchivo = time().$file->getClientOriginalName();
+    $file->move(public_path('avatars'), $nombreDeArchivo);
+  }*/
+  $usuario->avatar = $nombreDeArchivo;
+  $usuario->save();
+  return redirect('/vistaUsuario')->with('mensaje', 'Avatar  de '.$usuario->userName.' modificado con éxito');;
+}
+
+
 }

@@ -42,5 +42,9 @@ Route::get('/vistaUsuario', 'usersController@index');
 //    return view('/formModificarDatos', $vac );
 //});
 Route::get('/formModificarDatos/{idUser}', 'usersController@edit');
-//Route::post('/modificarDatos', 'usersController@updateUser');
+Route::get('/modificarDatos/{idUser}', 'usersController@updateUser');
+Route::get('/formModificarFoto/{idUser}', 'usersController@editFoto');
+Route::get('/modificarFoto/{idUser}', 'usersController@updateAvatarUser');
+
+
 //Route::post('/modificarDatos', 'usersController@updateUser');
