@@ -18,16 +18,25 @@ Route::get('/contacto', "indexController@verContacto");
 Route::get('/FAQ', "indexController@verFAQ");
 //RUTA Registro
 Route::get('/registro', "indexController@verRegistro");
-// RUTAS JUEGO
-Route::get("/quizzes", "JuegoController@verSelectQuizz");
+// RUTAS JUEGO(menú)
+Route::get("/categorias", "CategoriaController@listarCategorias");
+Route::get("/categoria/{id?}","CategoriaController@detalleCategoria")->name('categoria');
+//rutas JUEGO
 Route::get("/juego", "JuegoController@CargaJuego");
 Route::get("/resultados", "JuegoController@Resultados");
+
+// ABM categorias
+Route::get("/agregarCategoria", "CategoriaController@AltaCategoria_GET");
+Route::post("/agregarCategoria", "CategoriaController@NuevaCategoria_POST");
+//ABM Quizz
+Route::get("/nuevoQuizz", "quizzController@AltaQuizz_GET");
+Route::post("/nuevoQuizz", "quizzController@NuevoQuizz_POST");
 // RUTAS PREGUNTAS (ABM)
+Route::get("/indexP","PreguntasController@index");
 Route::get("/modificar", "PreguntasController@Modificar");
 Route::get("/nuevaPregunta", "PreguntasController@AltaPregunta");
 Route::get("/nuevoJuego", "PreguntasController@AltaJuego");
-Route::get("/agregarCategoria", "PreguntasController@AltaCategoria_GET");
-Route::post("/agregarCategoria", "PreguntasController@NuevaCategoria_POST");
+
 
 Auth::routes();
 

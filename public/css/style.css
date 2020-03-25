@@ -1,4 +1,4 @@
-*{margin: 0 auto;}
+﻿*{margin: 0 auto;}
 body{width: 100%;
 /* height: 100vh; (esto no sirvió) */
 /*background-image: url('../img/background.jpg');*/
@@ -460,72 +460,48 @@ background-color:#fff ;
       }
 
       /* menu selectQuizz */
-      .selectQuizz {
-	width: 570px;
-	margin: 30px auto;
+.menuCategorias{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
 }
 
-.selectQuizz a {
-	width: 180px;
-  height: 180px;
-	line-height: 180px;
-	display: block;
-	margin: 4px;
-	text-align: center;
-	float:left;
-	opacity: 0.8;
+.selectQuizz {
+	width: 80%;
+	margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+
 }
-.yellow {
+
+.col{
+  flex: 1;
+  margin: 1rem;
+}
+.selectCategoria{
+  width: 12rem;
+  height: 12rem;
+  border-radius: 5px;
   color: white;
   font-weight: bolder;
   text-decoration: none;
   font-family: 'Open Sans', sans-serif;
-  background: #fdd22a;
-}
-.blue { background: #009fe3; }
-.purple { background: #574696; }
-.orange { background: #ee7202; }
-.pink { background: #e61c67; }
-.green { background: #96c11f; }
-
-.yellow img{
-  width: 160px;
-  margin-top: 45px;
-  margin-left: auto;
-}
-
-.yellow:hover, .blue:hover, .purple:hover, .orange:hover, .pink:hover, .green:hover{
-  opacity: 1;
-}
-
-
-/*Vista usuario*/
-#imgVistaUsuario {
- width:25vw;
- margin-top: 20px;
- margin-bottom: 20px;
- padding: 8px;
- border: 2px solid  #96c11f;
- 
-}
-#h1vistaUser {
-  padding: 5px  #fff;
-  border: 1px solid #574696;
-  font-family: 'Rajdhani', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
 
 }
-#datosVistaUser {
-  background:rgba(35, 2, 124, 0.9);
-  border: 1px solid #574696;
-  font-family: 'Rajdhani', sans-serif;
 
- /* border-top:1px solid #fff;*/
-color:#fff;
-}
-/*vista usuario*/
-#vistaUser {
-  font-family: 'Rajdhani', sans-serif;
-  
+.col img{
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
 }
 
-
+.selectCategoria:hover{
+  opacity: 0.7;
+  text-decoration: none;
+  color: white;
+  font-size: .95rem;
+}

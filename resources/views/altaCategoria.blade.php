@@ -4,44 +4,40 @@
 <!-- ALTA CATEGORIA -->
 
 
-    <article class="container preguntas">
-      <div class= "row p-2 h1 row justify-content-center">
-        <form action="/agregarCategoria" method="post">
-        @csrf
+    <article class="">
+      <div class="row p-2 h4 row justify-content-center">
+          <form action="/agregarCategoria" method="post" enctype="multipart/form-data">
+              @csrf
 
-            <div class="form-group row justify-content-center">
-                <label for="catNombre">NUEVA CATEGORIA</label>
-                <input type="text" class="form-control" name="catNombre"  value="{{old('catNombre') }}" id="catNombre" placeholder="Nombre de la Categoria">
-            </div>
-            <div class="form-group row justify-content-center">
-                <button type="submit" class="btn btn-dark">
-                    <i class="far fa-plus-square fa-lg"></i>
-                    AGREGAR
-                </button>
-            </div>
-            <div class="form-group row justify-content-center">
-                <a href="/nuevaPregunta" class="btn btn-outline-secondary">
-                    VOLVER
-                </a>
-            </div>
+              {{-- Validacion y errores --}}
+              @foreach ($errors->all() as $error)
+              <div class="alert alert-danger">
+                  <ul>
+                      <li> <small style="font-size:13px">{{ $error }}</small></li>
+                  </ul>
+              </div>
+              @endforeach
+              {{-- Input Categoria --}}
+              <div class="form-group column justify-content-center">
+                  <label for="">Nueva Categoria</label>
+                  <input type="text" class="form-control" name="catNombre"
+                        placeholder="--Nombre de la Categoria--" value="{{old('catNombre') }}">
+              </div>
+              {{-- Input imagen --}}
+              <div class="form-group column justify-content-center">
+                  <label for="">Seleccionar imagen</label>
+                  <input class="" type="file" name="imagen" style="font-size:14px">
+              </div>
+              {{-- Submit button--}}
+              <button type="submit" class="btn btn-dark">
+                  <i class="far fa-plus-square fa-lg"></i>
+                  Enviar
+              </button>
+              {{-- </div> --}}
+          </form>
 
-            <!-- SI LA VALIDACION TIENE ERRORES, LOS MUESTRO -->
-            @if(count($errors))
-                <div class="form-group mt-3">
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach($errors->all() as $error)
-                                <li>{{$error}}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            @endif
-
-        </form>
       </div>
-    </article>
-
+  </article>
 
 
 
