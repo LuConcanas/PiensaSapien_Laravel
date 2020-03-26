@@ -18,9 +18,8 @@ Route::get('/contacto', "indexController@verContacto");
 Route::get('/FAQ', "indexController@verFAQ");
 //RUTA Registro
 Route::get('/registro', "indexController@verRegistro");
-// RUTAS JUEGO(menú)
-Route::get("/categorias", "CategoriaController@listarCategorias");
-Route::get("/categoria/{id?}","CategoriaController@detalleCategoria")->name('categoria');
+// RUTAS JUEGO(menï¿½)
+Route::get("/categorias/{id?}", "CategoriaController@listarCategorias");
 //rutas JUEGO
 Route::get("/juego", "JuegoController@CargaJuego");
 Route::get("/resultados", "JuegoController@Resultados");

@@ -475,11 +475,12 @@ background-color:#fff ;
 
 }
 
-.col{
+.col {
   flex: 1;
   margin: 1rem;
 }
-.selectCategoria{
+
+.selectCategoria, .selectCategoriaAdmin{
   width: 12rem;
   height: 12rem;
   border-radius: 5px;
@@ -499,9 +500,37 @@ background-color:#fff ;
   border-radius: 50%;
 }
 
-.selectCategoria:hover{
+.selectCategoria:hover, .selectCategoriaAdmin:hover {
   opacity: 0.7;
   text-decoration: none;
   color: white;
   font-size: .95rem;
 }
+/*Vista usuario*/
+#imgVistaUsuario {
+  width:25vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 8px;
+  border: 2px solid  #96c11f;
+
+ }
+ #h1vistaUser {
+   padding: 5px  #fff;
+   border: 1px solid #574696;
+   font-family: 'Rajdhani', sans-serif;
+
+ }
+ #datosVistaUser {
+   background:rgba(35, 2, 124, 0.9);
+   border: 1px solid #574696;
+   font-family: 'Rajdhani', sans-serif;
+
+  /* border-top:1px solid #fff;*/
+ color:#fff;
+ }
+ /*vista usuario*/
+ #vistaUser {
+   font-family: 'Rajdhani', sans-serif;
+
+ }

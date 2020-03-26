@@ -9,7 +9,6 @@ class Categoria extends Model
     public $table = "categorias";
     public $guarded = [];
 
-
     public function quizz(){
       return $this->hasMany('App\Quizz');
     }
