@@ -4,12 +4,6 @@
   @php
     //COLORES PARA EL BACKGROUND DE LOS DIVS
     $color = ['#fdd22a','#96c11f','#e61c67','#574696','#009fe3','#ee7202'];
-    //JSON INVISIBLE DE CATEGORIAS PARA PASAR A JS
-    $cat = json_encode($categorias);
-    echo "<div id='cat' style='display:none;'>".$cat."</div>";
-    //JSON INVISIBLE DE QUIZZES PARA PASAR A JS
-    $quiz = json_encode($quizzes);
-    echo "<div id='quiz' style='display:none;'>".$quiz."</div>";
   @endphp
 
 
