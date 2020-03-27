@@ -47,6 +47,7 @@ class usersController extends Controller
 //
     public function store(Request $req){
         //instancio User
+        
         $nuevoUsuario = new User();
        
          $nuevoUsuario->userName = $req['name'];
