@@ -20,9 +20,3 @@ function ocultarMenu(a,b,c){
     })
  }
 }
-// function IDseleccionado(a){
-//   a.addEventListener('click',function(){
-//     event.preventDefault()
-//     console.log(event.target.id);
-//   })
-// }

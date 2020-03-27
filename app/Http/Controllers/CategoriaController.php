@@ -52,23 +52,5 @@ class CategoriaController extends Controller
     return view('selectCategoria',compact('categorias','quizzes'));
   }
 
-  // public function detalleCategoria($id){
-  //   $idCategorias = Categoria::find($id);
-  //   return view('selectQuizz',compact('idCategorias'));
-  //
-  // }
-
-//   public function joinTables(){
-//   //join categorias con quizzes con preguntas
-//   $data = DB::table('preguntas')
-//           ->join('quizzes','quizzes.id','=','preguntas.idQuizz')
-//           ->join('categorias','categorias.id','=','quizzes.idCategoria')
-//           ->select('categorias.nameCategoria','quizzes.Quizzes_name','preguntas.id')
-//           ->get();
-//
-//   return view()
-// }
-
-
 
 }
