@@ -10,6 +10,10 @@ class Categoria extends Model
     public $guarded = [];
 
     public function quizz(){
-      return $this->hasMany('App\Quizz');
+      return $this->hasMany('App\Quizz','idCategoria');
+    }
+
+    public function scopeBuscarCategoria($query,$id){
+      return $query->where('id','=',$id);      
     }
 }

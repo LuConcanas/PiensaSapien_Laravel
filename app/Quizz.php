@@ -10,7 +10,7 @@ class Quizz extends Model
   public $guarded = [];
 
   public function categoria(){
-    return $this->belongsTo('App\Categoria');
+    return $this->belongsTo('App\Categoria','idCategoria');
   }
   public function pregunta(){
     return $this->hasMany('App\Pregunta');

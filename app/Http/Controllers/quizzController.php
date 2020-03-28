@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Categoria;
 use App\Quizz;
 use Illuminate\Http\Request;
+use DB;
 
 class quizzController extends Controller
 {
@@ -41,8 +42,9 @@ class quizzController extends Controller
 
   }
 
-  public function listarQuizzes(Categoria $id){
-    $quizzes = Quizz::all();
+  public function listarQuizzes($id){
+    $categoria= Categoria::BuscarCategoria($id)->first();
+    $quizzes = $categoria->quizz;
     return view('selectQuizz',compact('quizzes'));
   }
 
