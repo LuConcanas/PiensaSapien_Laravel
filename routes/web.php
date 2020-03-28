@@ -18,8 +18,10 @@ Route::get('/contacto', "indexController@verContacto");
 Route::get('/FAQ', "indexController@verFAQ");
 //RUTA Registro
 Route::get('/registro', "indexController@verRegistro");
-// RUTAS JUEGO(men�)
-Route::get("/categorias/{id?}", "CategoriaController@listarCategorias");
+// RUTAS JUEGO(menu)
+Route::get("/categorias", "CategoriaController@listarCategorias");
+Route::get("/categorias/{id}", "quizzController@listarQuizzes");
+
 //rutas JUEGO
 Route::get("/juego", "JuegoController@CargaJuego");
 Route::get("/resultados", "JuegoController@Resultados");

@@ -41,6 +41,11 @@ class quizzController extends Controller
 
   }
 
-  
+  public function listarQuizzes(Categoria $id){
+    $quizzes = Quizz::all();
+    return view('selectQuizz',compact('quizzes'));
+  }
+
+
 
 }

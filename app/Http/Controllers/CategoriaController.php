@@ -41,15 +41,14 @@ class CategoriaController extends Controller
       }
       $categoria->nameCategoria= $request->input('catNombre');
       $categoria->save();
-    //  dd($request);
+    //dd($request);
     return view('AltaCategoria');
   }
 
 //listado de categorias existentes
   public function listarCategorias(){
     $categorias = Categoria::all();
-    $quizzes = Quizz::all();
-    return view('selectCategoria',compact('categorias','quizzes'));
+    return view('selectCategoria',compact('categorias'));
   }
 
 
