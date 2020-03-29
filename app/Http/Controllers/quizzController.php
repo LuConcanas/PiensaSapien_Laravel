@@ -9,9 +9,11 @@ use DB;
 class quizzController extends Controller
 {
   //ALTA Quizz GET
-  public function AltaQuizz_GET()
+  public function AltaQuizz_GET($id)
   {
-      return view("altaQuizz");
+    $categoriaActual= Categoria::find($id)->first();
+
+      return view("altaQuizz",compact('categoriaActual'));
   }
   //ALTA Quizz POST
   public function NuevoQuizz_POST(request $request)
@@ -44,8 +46,8 @@ class quizzController extends Controller
 
   public function listarQuizzes($id){
     $categoria= Categoria::BuscarCategoria($id)->first();
-    $quizzes = $categoria->quizz;
-    return view('selectQuizz',compact('quizzes'));
+    $quizzes = $categoria->quizz; 
+    return view('selectQuizz',compact('quizzes','categoria'));
   }
 
 

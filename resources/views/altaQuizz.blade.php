@@ -2,8 +2,6 @@
 @section("Principal")
 
 <!-- ALTA QUIZZ -->
-
-
     <article class="container preguntas">
       <div class="row p-2 h4 row justify-content-center">
           <form action="/nuevoQuizz" method="post" enctype="multipart/form-data">
