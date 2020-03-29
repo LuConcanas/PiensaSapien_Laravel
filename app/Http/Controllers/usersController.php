@@ -155,29 +155,28 @@ class usersController extends Controller
   
             
 }
+
 public function updateAvatarUser(request $req, $id){
 
   $usuario = User::find($id);
-
-
-  $ruta = $req['avatar']->store('public');
-  $nombreDeArchivo = basename($ruta);
+  if ($req->file('avatar')) {
+    $ruta = request()->input('avatar')->store('public');
+    $nombreDeArchivo = basename($ruta);
+    $usuario = User::firstOrCreate(['idUser' => $id]);
+    
+    $usuario->avatar = $nombreDeArchivo;
+    $usuario->save();
+   
+  }
+  return redirect('/vistaUsuario');
   
-  // if($req->file('avatar') ) {
-   // $nombreDeArchivo = time().'.'.request()->avatar->getClientOriginalExtension();
-    //$imagen =$req->file('avatar');
-   // $imagen->getClientOriginalExtension();
-   // $nombreDeArchivo =$req->avatar->getClientOriginalName();
-    //$req->avatar->move(public_path('avatars'), $nombreDeArchivo);
-    //}
+
   /*if($req->file('avatar')){
     $file = $req->file('avatar');
     $nombreDeArchivo = time().$file->getClientOriginalName();
     $file->move(public_path('avatars'), $nombreDeArchivo);
   }*/
-  $usuario->avatar = $nombreDeArchivo;
-  $usuario->save();
-  return redirect('/vistaUsuario')->with('mensaje', 'Avatar  de '.$usuario->userName.' modificado con éxito');;
+ 
 }
 
 

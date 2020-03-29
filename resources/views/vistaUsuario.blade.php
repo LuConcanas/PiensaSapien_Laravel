@@ -5,9 +5,7 @@
        <div id="contenedorUser">
        <div class="text-center" id="fotoUser">
         @if($usuario->avatar == "")
-        <img class="card-img" src="/img/Foto_Usuario.png" class="rounded-circle" alt="avatar">
-        <!--<img src="../../public/img/Foto_Usuario.png" alt="avatar" class="rounded-circle" >
-        --><!-- Saco temporalmente esto para ver como se ve una imagen: "storage/avatars/{{$usuario->avatar}}"-->
+        <img class="rounded-circle" id="imgVistaUsuario" src="/img/Foto_Usuario.png" class="rounded-circle" alt="avatar">
         @elseif($usuario->avatar !== null)
         <img class="rounded-circle" id="imgVistaUsuario" src="/storage/{{$usuario->avatar}}"  alt="avatar" >
 
@@ -18,7 +16,7 @@
         </div> --}}
       </div>
 
-
+<div class="text-center"> <a href="/formModificarFoto/{{$usuario->idUser}}" class="btn btn-dark">Modificar foto</a></div>
 
         <div  class='col-md-6 mt-4 p-0'  id="datosVistaUser">
 

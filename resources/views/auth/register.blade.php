@@ -32,12 +32,13 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invad @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-                                 <small id="errorEmail"> </small>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                <small id="errorEmail"> </small>
+
                             </div>
                         </div>
 

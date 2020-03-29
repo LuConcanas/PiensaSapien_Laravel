@@ -51,6 +51,7 @@ Route::get('/vistaUsuario', 'usersController@index');
 //$vac = compact('idUser');
 //    return view('/formModificarDatos', $vac );
 //});
+
 Route::get('/formModificarDatos/{idUser}', 'usersController@edit');
 Route::get('/modificarDatos/{idUser}', 'usersController@updateUser');
 Route::get('/formModificarFoto/{idUser}', 'usersController@editFoto');
