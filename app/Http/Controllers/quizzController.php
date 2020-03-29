@@ -47,7 +47,7 @@ class quizzController extends Controller
   public function listarQuizzes($id){
     $categoria= Categoria::BuscarCategoria($id)->first();
     $quizzes = $categoria->quizz;
-    return view('selectQuizz',compact('quizzes'));
+    return view('selectQuizz',compact('quizzes','categoria'));
   }
 
 
