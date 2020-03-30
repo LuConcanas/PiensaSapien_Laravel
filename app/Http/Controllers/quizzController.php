@@ -11,12 +11,12 @@ class quizzController extends Controller
   //ALTA Quizz GET
   public function AltaQuizz_GET($id)
   {
-      $categoriaActual= Categoria::find($id)->first();
+    $categoria = Categoria::BuscarCategoria($id)->first();
 
-      return view("altaQuizz",compact('categoriaActual'));
+      return view("altaQuizz",compact('categoria'));
   }
   //ALTA Quizz POST
-  public function NuevoQuizz_POST(request $request)
+  public function NuevoQuizz_POST(request $request , $id)
   {
 
     //Validacion
@@ -37,6 +37,7 @@ class quizzController extends Controller
           $quizz->imagen = $nombreArchivo;
       }
       $quizz->Quizzes_name= $request->input('Quizzes_name');
+      $quizz->idCategoria= $id;
       $quizz->save();
     //  dd($request);
       return view("altaQuizz");

@@ -8,6 +8,9 @@
           <div class="col">
             <div class="selectCategoria"
                style="background-color:purple">
+               @if ($quizz->imagen)
+                 <img src="/storage/{{$quizz->imagen}}" alt="">
+               @endif
               <span>{{$quizz['Quizzes_name']}}</span>
             </div>
         </div>

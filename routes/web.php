@@ -31,7 +31,7 @@ Route::get("/agregarCategoria", "CategoriaController@AltaCategoria_GET");
 Route::post("/agregarCategoria", "CategoriaController@NuevaCategoria_POST");
 //ABM Quizz
 Route::get("/nuevoQuizz/{id}", "quizzController@AltaQuizz_GET");
-Route::post("/nuevoQuizz", "quizzController@NuevoQuizz_POST");
+Route::post("/nuevoQuizz/{id}", "quizzController@NuevoQuizz_POST");
 // RUTAS PREGUNTAS (ABM)
 Route::get("/indexP","PreguntasController@index");
 Route::get("/modificar", "PreguntasController@Modificar");
