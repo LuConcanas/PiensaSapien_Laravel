@@ -35,7 +35,7 @@ Route::post("/nuevoQuizz/{id}", "quizzController@NuevoQuizz_POST");
 // RUTAS PREGUNTAS (ABM)
 Route::get("/indexP","PreguntasController@index");
 Route::get("/modificar", "PreguntasController@Modificar");
-Route::get("/nuevaPregunta", "PreguntasController@AltaPregunta");
+Route::get("/nuevaPregunta/{id}", "PreguntasController@AltaPregunta");
 Route::get("/nuevoJuego", "PreguntasController@AltaJuego");
 
 

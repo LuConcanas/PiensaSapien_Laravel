@@ -1,12 +1,21 @@
 @extends("/layout/plantillaGeneral")
 @section("Principal")
-
+<div class="row p-2 h4 row justify-content-center" style="color:white">
+  <h3></h3>
+</div>
 <!-- ALTA QUIZZ -->
     <article class="container preguntas">
       <div class="row p-2 h4 row justify-content-center">
           <form action="" method="post" enctype="multipart/form-data">
               @csrf
-
+              @if (session()->has('notif'))
+                <div class="alert alert-success" style="font-size:14px">
+                  {{session()->get('notif')}}
+                </div>
+                {{-- <script type="text/javascript">
+                  mostrarBoton()
+                </script> --}}
+              @endif
               {{-- Validacion y errores --}}
               @foreach ($errors->all() as $error)
               <div class="alert alert-danger">
@@ -31,13 +40,20 @@
                   <i class="far fa-plus-square fa-lg"></i>
                   Enviar
               </button>
+              @if (session()->has('notif'))
+                <button type="button" name="button" class="btn btn-dark">
+                  <a href={{url("/nuevaPregunta/$quizz->id")}} style="font-size:14px; text-decoration:none;color:white">Siguiente</a>
+                </button>
+              @endif
               {{-- </div> --}}
           </form>
-
       </div>
   </article>
+  @endsection
 
-
-
-
-@endsection
+  {{-- <script type="text/javascript">
+    function mostrarBoton(){
+      var boton = document.getElementById("siguiente");
+      boton.style.display ="block";
+    }
+  </script> --}}

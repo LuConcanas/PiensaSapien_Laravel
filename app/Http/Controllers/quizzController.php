@@ -9,15 +9,15 @@ use DB;
 class quizzController extends Controller
 {
   //ALTA Quizz GET
-  public function AltaQuizz_GET($id)
-  {
+  public function AltaQuizz_GET($id){
     $categoria = Categoria::BuscarCategoria($id)->first();
 
       return view("altaQuizz",compact('categoria'));
   }
+
+
   //ALTA Quizz POST
-  public function NuevoQuizz_POST(request $request , $id)
-  {
+  public function NuevoQuizz_POST(request $request , $id){
 
     //Validacion
       $this->validate($request,
@@ -39,8 +39,9 @@ class quizzController extends Controller
       $quizz->Quizzes_name= $request->input('Quizzes_name');
       $quizz->idCategoria= $id;
       $quizz->save();
+      session()->flash('notif','Se ha guardado exitosamente. Presione "Siguiente" para añadir preguntas a su Quizz');
     //  dd($request);
-      return view("altaQuizz");
+      return view("altaQuizz",compact('quizz'));
 
 
   }
