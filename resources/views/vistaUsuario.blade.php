@@ -1,7 +1,7 @@
 @extends("/layout/plantillaGeneral")
 @section("Principal")
 
-       <div  class='col-md-4 mt-2 p-0 mx-auto' id="h1vistaUser"><h1 class="text-center">Mis datos</h1></div><br>
+       <div class='col-md-4 mt-2 p-0 mx-auto' id="h1vistaUser"><h1 class="text-center">Mis datos</h1></div><br>
        <div id="contenedorUser">
        <div class="text-center" id="fotoUser">
         @if($usuario->avatar == "")

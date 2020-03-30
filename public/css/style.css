@@ -7,17 +7,16 @@ background-color: rgb(177, 159, 138);
 font-family: 'Rajdhani', sans-serif;
 
 }
-
-
-
-/*el nav*/
+.fondo{
+  background-color: rgba(0,0,0,0.9);
+}
 /*el nav*/
 
 header{
   font-family: 'Righteous', cursive;
   font-size: 17px;
-background-color: rgba(63, 139, 50, 0.9);
-height: 50px;
+background-color: rgba(189, 237, 0, 0.9);
+height: 57px;
 width: 100%;
 }
 #btn-menu{
@@ -53,10 +52,13 @@ transition: 0.5s;
 .menu li a{
   display: block;
   padding: 15px 20px;
-  color: #fff;
+  color: rgb(0,0,0);
   text-decoration: none;
 }
 
+article a{
+  font-size:40px ;
+}
 
 /*querie del nav*/
 @media (max-width:750px){
@@ -519,13 +521,13 @@ background-color:#fff ;
    padding: 5px  #fff;
    border: 1px solid #574696;
    font-family: 'Rajdhani', sans-serif;
-
+    background:rgba(254,254,254, 0.9);
  }
  #datosVistaUser {
    background:rgba(35, 2, 124, 0.9);
    border: 1px solid #574696;
    font-family: 'Rajdhani', sans-serif;
- 
+
   /* border-top:1px solid #fff;*/
  color:#fff;
  }

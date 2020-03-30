@@ -20,7 +20,7 @@
 
   <title>PiensaSapien</title>
   </head>
-  <body>
+  <body class="fondo">
 
   <!-- INICIO MENU -->
     <header class="menu">
@@ -92,5 +92,4 @@
           @yield("Principal")
   </section>
 
-  </body>
 </html>

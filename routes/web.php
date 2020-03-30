@@ -56,6 +56,7 @@ Route::get('/formModificarDatos/{idUser}', 'usersController@edit');
 Route::get('/modificarDatos/{idUser}', 'usersController@updateUser');
 Route::get('/formModificarFoto/{idUser}', 'usersController@editFoto');
 Route::get('/modificarFoto/{idUser}', 'usersController@updateAvatarUser');
+Route::post('/modificarFoto/{idUser}', 'usersController@updateAvatarUser');
 
 
 //Route::post('/modificarDatos', 'usersController@updateUser');

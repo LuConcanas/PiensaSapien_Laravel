@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Auth\RegisterConstroller;
+use Illuminate\Support\Facades\Storage;
 //añado use auth para ver si esta logueado el usuario
 use Auth;
 class usersController extends Controller
@@ -47,13 +48,13 @@ class usersController extends Controller
 //
     public function store(Request $req){
         //instancio User
-        
+
         $nuevoUsuario = new User();
-       
+
          $nuevoUsuario->userName = $req['name'];
          $nuevoUsuario->email = $req['email'];
          $nuevoUsuario->password = $req['password'];
-        
+
          //Con save() guardo el user en la db
          $nuevoUsuario->save();
 
@@ -75,7 +76,7 @@ class usersController extends Controller
             return view("register");
           }
         }
-        
+
       }
 
 
@@ -133,13 +134,13 @@ class usersController extends Controller
 /*public function editUser($usuario)
 {
   $usuario = User::find($usuario);
-  
+
   return view('/formModificarDatos',['usuario' => $usuario]);
 
 }*///
 
   public function updateUser(Request $req, $id){
-  
+
   //  $usuario->avatar = $nombreDeArchivo;
  //  $usuario = User::find($req->input('idUser'));
    $usuario = User::find($id);
@@ -149,34 +150,33 @@ class usersController extends Controller
   //$usuario->avatar = $nombreDeArchivo;
   $usuario->email= $req->input('email');
   $usuario->userName= $req->input('userName');
-  
+
   $usuario->save();
   return redirect('/vistaUsuario')->with('mensaje', 'Datos  de '.$usuario->userName.' modificados con éxito');;
-  
-            
+
+
 }
 
 public function updateAvatarUser(request $req, $id){
 
   $usuario = User::find($id);
   if ($req->file('avatar')) {
-    $ruta = request()->input('avatar')->store('public');
+    unlink(storage_path('/app/public/'.$usuario->avatar));
+    $ruta = request()->file('avatar')->store('public');
     $nombreDeArchivo = basename($ruta);
-    $usuario = User::firstOrCreate(['idUser' => $id]);
-    
     $usuario->avatar = $nombreDeArchivo;
     $usuario->save();
-   
+
   }
   return redirect('/vistaUsuario');
-  
+
 
   /*if($req->file('avatar')){
     $file = $req->file('avatar');
     $nombreDeArchivo = time().$file->getClientOriginalName();
     $file->move(public_path('avatars'), $nombreDeArchivo);
   }*/
- 
+
 }
 
 
