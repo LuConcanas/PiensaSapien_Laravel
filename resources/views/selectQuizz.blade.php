@@ -1,12 +1,9 @@
 @extends("/layout/plantillaGeneral")
 @section("Principal")
+
 @csrf
-  {{--Quizzes segun categoria seleccionada(INVISIBLES HASTA QUE SE SELECCIONA UNA CATEGORIA) --}}
+  {{--Quizzes segun categoria seleccionada--}}
   <div class="selectQuizz">
-    <div class="col"> {{--BOTON DE EDICIÓN PARA EL ADMIN --}}
-      <a class="selectCategoriaAdmin" href={{url('/nuevoQuizz')}}
-     style="background-color:magenta"> <span>Nuevo Quizz<br>(Admin) </span> </a>
-    </div>
     @foreach ($quizzes as $quizz)
           <div class="col">
             <div class="selectCategoria"
@@ -15,6 +12,10 @@
             </div>
         </div>
     @endforeach
+    <div class="col"> {{--BOTON DE EDICIÓN PARA EL ADMIN --}}
+      <a class="selectCategoriaAdmin" href={{url("/nuevoQuizz/$categoria[id]")}}
+     style="background-color:magenta"> <span>Nuevo Quizz<br>(Admin) </span> </a>
+    </div>
   </div>
   </div>
   @endsection

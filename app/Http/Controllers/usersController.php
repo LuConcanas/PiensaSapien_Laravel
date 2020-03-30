@@ -156,7 +156,6 @@ class usersController extends Controller
 
 
 }
-
 public function updateAvatarUser(request $req, $id){
 
   $usuario = User::find($id);
@@ -169,13 +168,6 @@ public function updateAvatarUser(request $req, $id){
 
   }
   return redirect('/vistaUsuario');
-
-
-  /*if($req->file('avatar')){
-    $file = $req->file('avatar');
-    $nombreDeArchivo = time().$file->getClientOriginalName();
-    $file->move(public_path('avatars'), $nombreDeArchivo);
-  }*/
 
 }
 

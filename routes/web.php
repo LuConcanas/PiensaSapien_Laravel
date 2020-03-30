@@ -30,7 +30,7 @@ Route::get("/resultados", "JuegoController@Resultados");
 Route::get("/agregarCategoria", "CategoriaController@AltaCategoria_GET");
 Route::post("/agregarCategoria", "CategoriaController@NuevaCategoria_POST");
 //ABM Quizz
-Route::get("/nuevoQuizz", "quizzController@AltaQuizz_GET");
+Route::get("/nuevoQuizz/{id}", "quizzController@AltaQuizz_GET");
 Route::post("/nuevoQuizz", "quizzController@NuevoQuizz_POST");
 // RUTAS PREGUNTAS (ABM)
 Route::get("/indexP","PreguntasController@index");
@@ -51,7 +51,6 @@ Route::get('/vistaUsuario', 'usersController@index');
 //$vac = compact('idUser');
 //    return view('/formModificarDatos', $vac );
 //});
-
 Route::get('/formModificarDatos/{idUser}', 'usersController@edit');
 Route::get('/modificarDatos/{idUser}', 'usersController@updateUser');
 Route::get('/formModificarFoto/{idUser}', 'usersController@editFoto');
