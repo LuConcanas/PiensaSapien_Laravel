@@ -41,6 +41,7 @@ class CategoriaController extends Controller
       }
       $categoria->nameCategoria= $request->input('catNombre');
       $categoria->save();
+      session()->flash('notif','Se ha guardado exitosamente! La nueva categoria puede verse en el menu principal.');
     //dd($request);
     return view('AltaCategoria');
   }

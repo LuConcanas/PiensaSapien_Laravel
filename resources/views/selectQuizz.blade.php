@@ -6,13 +6,14 @@
   <div class="selectQuizz">
     @foreach ($quizzes as $quizz)
           <div class="col">
-            <div class="selectCategoria"
-               style="background-color:purple">
+            <a class="selectCategoria"
+               style="background-color:purple"
+               href={{url("/juego/$quizz->id")}}>
                @if ($quizz->imagen)
                  <img src="/storage/{{$quizz->imagen}}" alt="">
                @endif
               <span>{{$quizz['Quizzes_name']}}</span>
-            </div>
+            </a>
         </div>
     @endforeach
     <div class="col"> {{--BOTON DE EDICIÓN PARA EL ADMIN --}}

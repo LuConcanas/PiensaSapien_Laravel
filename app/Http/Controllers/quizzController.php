@@ -18,7 +18,7 @@ class quizzController extends Controller
 
   //ALTA Quizz POST
   public function NuevoQuizz_POST(request $request , $id){
-
+    $categoria = Categoria::BuscarCategoria($id)->first();
     //Validacion
       $this->validate($request,
         [
@@ -41,7 +41,7 @@ class quizzController extends Controller
       $quizz->save();
       session()->flash('notif','Se ha guardado exitosamente. Presione "Siguiente" para añadir preguntas a su Quizz');
     //  dd($request);
-      return view("altaQuizz",compact('quizz'));
+      return view("altaQuizz",compact('quizz','categoria'));
 
 
   }

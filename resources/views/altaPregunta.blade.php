@@ -1,79 +1,58 @@
 @extends("/layout/plantillaGeneral")
 @section("Principal")
 
-<!-- ALTA PREGUNTA -->
+  {{-- Validacion y errores --}}
+  @foreach ($errors->all() as $error)
+  <div class="alert alert-danger">
+      <ul>
+          <li> <small style="font-size:13px">{{ $error }}</small></li>
+      </ul>
+  </div>
+  @endforeach
 
-  <!-- TITULO -->
-    <article class="container preguntas">
-      <div class= "row p-2 h1 row justify-content-center">
-        CARGAR NUEVA IMAGEN
+  {{-- Titulo del Quizz --}}
+<div class="row p-2 h4 row justify-content-center" style="color:white">
+  <h3>{{$quizz->Quizzes_name}}</h3>
+</div>
+{{-- Formulario para nueva pregunta --}}
+<div class=""style="width:50%;margin:0 auto;padding: 1rem;background-color:grey;">
+
+  <form class="" action="" method="post" enctype="multipart/form-data">
+    @csrf
+      <div class="form-group">
+        <label for="">Pregunta</label>
+        <input class="form-control" type="text" name="descripcion"
+         value="{{old('descripcion') }}" placeholder="Ej:¿Cuánto es 2+2?">
       </div>
-    </article>
 
+      <div class="form-group">
+        <label for="">Respuesta Correcta:</label>
+        <input class="form-control" type="text" name="opcion1"
+         value="{{old('opcion1') }}" placeholder="Ej:4">
+      </div>
 
-  <!-- CUERPO -->
-    <article class="container preguntas">
+      <div class="form-group">
+        <label for="">Respuesta Incorrecta:</label>
+        <input class="form-control" type="text" name="opcion2"
+         value="{{old('opcion2') }}" placeholder="Ej:22">
+      </div>
 
+      <div class="form-group">
+        <label for="">Respuesta Incorrecta:</label>
+        <input class="form-control" type="text" name="opcion3"
+          value="{{old('opcion3') }}" placeholder="Ej:-4">
+      </div>
 
-      <!-- ELEGIR JUEGO -->
-        <div class= "row p-2 row justify-content-center">
-          SELECIONAR JUEGO
-        </div>
+      <div class="form-group">
+        <label for="">Respuesta Incorrecta:</label>
+        <input class="form-control" type="text" name="opcion4"
+         value="{{old('opcion4') }}" placeholder="Ej:0">
+      </div>
 
-        <div class= "row p-1 justify-content-center">
-          <select class= "" name="juegos" id="juego">
-            <option value="1"> LOS SIMPSOM </option>
-          </select>
-        </div>
+      <button type="submit" class="btn btn-dark">Submit</button>
+  </form>
+</div>
 
-      <!-- CARGA IMAGEN -->
-        <div class= "row p-2 row justify-content-center">
-          IMAGEN
-        </div>
-        <div class= "row justify-content-center">
-          <form method="post" action="upload.php" enctype="multipart/form-data" id="uploadForm">
-            <input class ="col-12 text-center"  type="file" name="imagen" id="imagen">
-          </form>
-        </div>
-
-
-
-            <div class= "row p-2 text-left">
-            <div> DESCRIPCION </div>
-            </div>
-            <div class= "row p-1 justify-content-center">
-                <input class ="col-3 text-center"  type="text" name="respuesta" id="respuesta">
-            </div>
-
-            <div class= "row p-2 text-left">
-            <div class= > RESPUESTA </div>
-            </div>
-            <div class= "row p-1 justify-content-center">
-                <input class ="col-3 text-center"  type="text" name="respuesta" id="respuesta">
-            </div>
-
-            <div class= "row p-2">
-            <div> DIFICULTAD </div>
-            </div>
-            <div class= "row p-1 justify-content-center">
-                <input class ="col-3 text-center"  type="text" name="respuesta" id="respuesta">
-            </div>
-        </article>
-
-        <article class= "container">
-
-
-
-                <!-- BOTON GUARDAR -->
-                  <form action= "juego" method="GET" class = "row justify-content-center p-1">
-                    <button type="submit" class="btn btn-success col-3 botonjugar "> <b>GUARDAR</b> </button>
-                  </form>
-                <!-- BOTON VOLVER -->
-                <form action="Home.html" method="GET" class="row justify-content-center p-2">
-                  <button type="submit" class="btn btn-success col-3 botonjugar"> <b>HOME</b></a> </button>
-                </form>
-        </article>
-          <br>
 
 
 

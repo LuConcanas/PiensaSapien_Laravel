@@ -23,7 +23,7 @@ Route::get("/categorias", "CategoriaController@listarCategorias");
 Route::get("/categorias/{id}", "quizzController@listarQuizzes");
 
 //rutas JUEGO
-Route::get("/juego", "JuegoController@CargaJuego");
+Route::get("/juego/{id}", "JuegoController@CargaJuego");
 Route::get("/resultados", "JuegoController@Resultados");
 
 // ABM categorias
@@ -35,9 +35,8 @@ Route::post("/nuevoQuizz/{id}", "quizzController@NuevoQuizz_POST");
 // RUTAS PREGUNTAS (ABM)
 Route::get("/indexP","PreguntasController@index");
 Route::get("/modificar", "PreguntasController@Modificar");
-Route::get("/nuevaPregunta/{id}", "PreguntasController@AltaPregunta");
-Route::get("/nuevoJuego", "PreguntasController@AltaJuego");
-
+Route::get("/nuevaPregunta/{id}", "PreguntasController@AltaPreguntaGET");
+Route::post("/nuevaPregunta/{id}", "PreguntasController@AltaPreguntaPOST");
 
 Auth::routes();
 

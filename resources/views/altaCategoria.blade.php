@@ -5,9 +5,14 @@
 
 
     <article class="">
-      <div class="row p-2 h4 row justify-content-center">
+      <div class="row p-2 h4 row justify-content-center" style="color:white">
           <form action="/agregarCategoria" method="post" enctype="multipart/form-data">
               @csrf
+              @if (session()->has('notif'))
+                <div class="alert alert-success" style="font-size:14px">
+                  {{session()->get('notif')}}
+                </div>
+              @endif
 
               {{-- Validacion y errores --}}
               @foreach ($errors->all() as $error)

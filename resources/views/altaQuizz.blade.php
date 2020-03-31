@@ -1,7 +1,7 @@
 @extends("/layout/plantillaGeneral")
 @section("Principal")
 <div class="row p-2 h4 row justify-content-center" style="color:white">
-  <h3></h3>
+  <h3>Categoria: {{$categoria->nameCategoria}}</h3>
 </div>
 <!-- ALTA QUIZZ -->
     <article class="container preguntas">
@@ -12,9 +12,6 @@
                 <div class="alert alert-success" style="font-size:14px">
                   {{session()->get('notif')}}
                 </div>
-                {{-- <script type="text/javascript">
-                  mostrarBoton()
-                </script> --}}
               @endif
               {{-- Validacion y errores --}}
               @foreach ($errors->all() as $error)

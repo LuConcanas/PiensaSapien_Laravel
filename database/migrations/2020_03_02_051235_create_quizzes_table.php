@@ -18,8 +18,6 @@ class CreateQuizzesTable extends Migration
           $table->string('Quizzes_name');
           $table->unsignedBigInteger('idCategoria');
           $table->foreign('idCategoria')->references('id')->on('categorias');
-          $table->unsignedBigInteger('idCreator');
-          $table->foreign('idCreator')->references('idUser')->on('users');
           $table->timestamps();
 
 

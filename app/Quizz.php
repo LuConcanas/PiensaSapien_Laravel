@@ -16,14 +16,9 @@ class Quizz extends Model
     return $this->hasMany('App\Pregunta');
   }
 
-  public function quizz_user(){
-    return $this->belongsToMany(User::class,'quizz_user','idQuizz','idUser');
+  public function scopeBuscarQuizz($query,$id){
+    return $query->where('id','=',$id);
   }
-
-  public function user(){
-    return $this->belongsTo('App\User');
-  }
-
 
 
 }
