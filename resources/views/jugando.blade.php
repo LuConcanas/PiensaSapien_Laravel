@@ -1,18 +1,16 @@
 @extends("/layout/plantillaGeneral")
 @section("Principal")
 
-<div class="card text-center">
+<div class="card text-center" id="contenido">
 
   <div class="card-body">
-    <h5 class="card-title">Nombre de quiz</h5>
+    <h5 class="card-title">{{$quiz->Quizzes_name}}</h5>
     <div id="pregunta"></div>
     <div id="respuestas">
 
     </div>
   <input type="button" value="Responder" id="boton">
   <p id="resolucion"></p>
-
-
   </div>
 
 </div>

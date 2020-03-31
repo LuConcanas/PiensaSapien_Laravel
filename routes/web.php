@@ -60,7 +60,6 @@ Route::post('/modificarFoto/{idUser}', 'usersController@updateAvatarUser');
 //Route::post('/modificarDatos', 'usersController@updateUser');
 
 
-//Ruta para el juego (por ahora solo con html y js)
-Route::get('/jugando', function (){
-    return view('/jugando');
-  });
+//RUTAS JUEGO
+Route::get('/jugando/{id}', 'JuegoController@buscarQuizPorId');
+//Route::get('/jugando', 'PreguntasController@listarPreguntas');

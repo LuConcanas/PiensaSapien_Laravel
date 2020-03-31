@@ -1,4 +1,26 @@
+let contenido = document.querySelector('#contenido');
+function traer(){
+ 
+  fetch( '/jugando',{
+    method: 'get'
+  }).then(function(response) {
+      console.log(response);
+  })
+ }
+ 
 
+/*
+ fetch('/jugando/{id}',{
+    method: 'get'
+  }).then(function(response) {
+      return response.text();
+  }).then(function(htmlContent) {
+      section.innerHTML+=htmlContent;
+  }).catch(function(error) {
+      console.log(error);
+  });*/
+
+  
 //Hay un array para las preguntas y otro para las respuestas
 var preguntas = [	
     
@@ -26,6 +48,8 @@ var preguntas = [
         ['Tierra', 'Incorrecto', 'Incorrecto', 'Incorrecto' ] , 
         ['blanco', 'Incorrecto', 'Incorrecto', 'Incorrecto' ]
      ];
+
+     
      var formuladas = 0;
      var acertadas = 0;
     var indiceRespuestaCorrecta;
@@ -104,7 +128,7 @@ var preguntas = [
     
     document.getElementById('boton').addEventListener('click', function(){
     let respuesta = $("input[type=radio]:checked").val();
-    alert(respuesta);
+  
     
     if(respuesta === indiceRespuestaCorrecta){
         acertadas++;
