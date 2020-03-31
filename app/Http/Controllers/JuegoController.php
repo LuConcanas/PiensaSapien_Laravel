@@ -31,36 +31,35 @@ class JuegoController extends Controller
         return view("resultadoJuego");
     }
 
-
-
-//en la vista de juego se pasaria el id del quiz
-public function buscarQuizPorId($id){
-  $quiz = Quizz::find($id);
-  //Me traigo todas las preguntas de todos los quizzes
-  $preguntas = Pregunta::All();
-  $respuestas = Respuesta::All();
-  //inicializo un array vacio
-  $questions= [];
-  //Recorro cada pregunta
-   foreach($preguntas as $pregunta){ 
-  //Si el idQuiz de la pregunta coincide con el id del quizz
-    if($pregunta->idQuizz === $quiz->id){
-      foreach ($respuestas as $respuestasAPreg) {
-        //Si en idPregunta es igual al id de pregunta
-        if($respuestasAPreg->idPregunta === $pregunta->id){
-          //Guarda esa pregunta en el array questions
-         $answers[]= $respuestasAPreg;
+    public function buscarQuizPorId($id){
+      $quiz = Quizz::find($id);
+      //Me traigo todas las preguntas de todos los quizzes
+      $preguntas = Pregunta::All();
+      $respuestas = Respuesta::All();
+      //inicializo un array vacio
+      $questions= [];
+      //Recorro cada pregunta
+       foreach($preguntas as $pregunta){ 
+      //Si el idQuiz de la pregunta coincide con el id del quizz
+        if($pregunta->idQuizz === $quiz->id){
+          foreach ($respuestas as $respuestasAPreg) {
+            //Si en idPregunta es igual al id de pregunta
+            if($respuestasAPreg->idPregunta === $pregunta->id){
+              //Guarda esa pregunta en el array questions
+             $answers[]= $respuestasAPreg;
+            }
+          }
+      //Me guarda esa pregunta en el array questions
+          $questions[] = $pregunta;
         }
-      }
-  //Me guarda esa pregunta en el array questions
-      $questions[] = $pregunta;
-    }
-   } 
-   //Paso a la vista quiz y la var questions donde se encuentran las preguntas
-   //relacionadas por la clave foranea al quizz
-  return view('jugando', compact('quiz', 'questions', 'answers'));
-}
+       } 
+       return ["respuestas" => json_decode($respuestas),
+                "preguntas" => json_decode($preguntas)];
 
+ }
 
-
+  public function juego(){
+  
+    return view('/jugando');
+  }
 }

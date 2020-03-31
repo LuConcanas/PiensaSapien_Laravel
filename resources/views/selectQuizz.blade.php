@@ -8,7 +8,7 @@
           <div class="col">
             <a class="selectCategoria"
                style="background-color:purple"
-               href={{url("/juego/$quizz->id")}}>
+               href={{url("/jugando/$quizz->id")}}>
                @if ($quizz->imagen)
                  <img src="/storage/{{$quizz->imagen}}" alt="">
                @endif

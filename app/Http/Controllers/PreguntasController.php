@@ -59,8 +59,10 @@ class PreguntasController extends Controller
         return view("AltaPregunta", compact('quizz'));
     }
 
-
-
+    public function listarPreguntas() {
+      $preguntas = Pregunta::all();
+      return json_decode($preguntas);
+  }
 
 
 

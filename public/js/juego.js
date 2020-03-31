@@ -1,28 +1,33 @@
-let contenido = document.querySelector('#contenido');
-function traer(){
- 
-  fetch( '/jugando',{
-    method: 'get'
-  }).then(function(response) {
-      console.log(response);
-  })
- }
- 
+window.addEventListener('load', function() {
+    //let contenido = document.querySelector('#contenido');
 
-/*
- fetch('/jugando/{id}',{
-    method: 'get'
-  }).then(function(response) {
-      return response.text();
-  }).then(function(htmlContent) {
-      section.innerHTML+=htmlContent;
-  }).catch(function(error) {
-      console.log(error);
-  });*/
+    let preguntas =[];
+    let respuestas = [];
+    
+    //var url = new URL('http://localhost:8000/jugando/id');
+    //var id = new URLSearchParams(url.search);
 
+    fetch( '/jugando'+id,{
+        method: 'get'
+    }).then(function(response) {
+        return response.json();
+    }).then(function(data) {
+        console.log(data);
+       
+    })/*.catch(function(error) {
+        console.log(error);
+    })*/
   
-//Hay un array para las preguntas y otro para las respuestas
-var preguntas = [	
+  
+ /*for(let valor of data.preguntas){
+            preguntas = valor.descripcion;
+          console.log(preguntas);
+
+
+        }*/
+
+    //Hay un array para las preguntas y otro para las respuestas
+/*var preguntas = [	
     
     [ '¿Cómo se perdió la mascota del Mundial de España de 1.982?'] ,
     [ '¿Cuánto es 3 ^ 3?'] , 														 
@@ -49,7 +54,7 @@ var preguntas = [
         ['blanco', 'Incorrecto', 'Incorrecto', 'Incorrecto' ]
      ];
 
-     
+   */
      var formuladas = 0;
      var acertadas = 0;
     var indiceRespuestaCorrecta;
@@ -61,6 +66,7 @@ var preguntas = [
     */
     //funcion para comenzar el juego
     function responderPregunta(){
+       
         //Saco un numero aleatorio para obtener una pregunta aleatoria
         var indiceAleatorio = Math.floor(Math.random()*preguntas.length);
         //En caso de tener las preguntas en un array y las respuestas en otro array, se hace esto asi la posicion de la pregunta en el array preguntas coincide con la posicion de las respuestas en el array repuestas.
@@ -142,4 +148,4 @@ var preguntas = [
     }
      
     });
-    
+});
