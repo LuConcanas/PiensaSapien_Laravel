@@ -39,7 +39,7 @@ class JuegoController extends Controller
       //inicializo un array vacio
       $questions= [];
       //Recorro cada pregunta
-       foreach($preguntas as $pregunta){ 
+       foreach($preguntas as $pregunta){
       //Si el idQuiz de la pregunta coincide con el id del quizz
         if($pregunta->idQuizz === $quiz->id){
           foreach ($respuestas as $respuestasAPreg) {
@@ -52,14 +52,14 @@ class JuegoController extends Controller
       //Me guarda esa pregunta en el array questions
           $questions[] = $pregunta;
         }
-       } 
-       return ["respuestas" => json_decode($respuestas),
-                "preguntas" => json_decode($preguntas)];
+       }
+
+       return view('jugando',compact('questions','answers'));
 
  }
 
   public function juego(){
-  
+
     return view('/jugando');
   }
 }

@@ -4,10 +4,13 @@
   <div class="menuCategorias">
   {{--listado de categorias  --}}
   <div class="selectQuizz">
-     <div class="col"> {{--BOTON DE EDICIÓN PARA EL ADMIN --}}
-      <a class="selectCategoriaAdmin" href={{url('/agregarCategoria')}}
-     style="background-color:magenta"> <span>Nueva Categoria<br>(Admin) </span> </a>
-    </div>
+
+      <div class="col"> {{--BOTON DE EDICIÓN PARA EL ADMIN --}}
+       <a class="selectCategoriaAdmin" href={{url('/agregarCategoria')}}
+      style="background-color:magenta"> <span>Nueva Categoria<br>(Admin) </span> </a>
+     </div>
+
+
     @foreach ($categorias as $categoria){{-- POR CADA CATEGORIA EN DB SE CREA UN DIV --}}
       <div class="col">
         <a class="selectCategoria" href={{url("/categorias/$categoria->id")}}
