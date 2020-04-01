@@ -102,6 +102,9 @@ window.addEventListener('load', function() {
         responderPregunta();			// ... seguir preguntando
     }
     else{						// de lo contrario...
+        document.getElementById("pregunta").innerHTML="";
+        document.getElementById("respuestas").innerHTML="";
+        document.getElementById('boton').setAttribute("style","display:none");
         mostrarResultado();		// ... finaliza juego mostrando el resultado
     }
 

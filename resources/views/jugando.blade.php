@@ -19,7 +19,7 @@
 <div class="card text-center"style="width: 20rem;"  id="contenidoJuego">
 
   <div class="card-body">
-  <h5 class="card-title" id="tituloQuiz">{{$quiz->Quizzes_name}}</h5>
+  <h1 class="card-title" id="tituloQuiz">{{$quiz->Quizzes_name}}</h5>
     <div id="pregunta"></div>
     <div id="respuestas"></div>
   <input type="button" value="Responder" id="boton">
