@@ -1,7 +1,7 @@
 @extends('/layout/plantillaGeneral')
 @section('Principal')
   <div class="contenedor_ranking">
-    <table class="table table-hover table-striped table-border" id="tabla">}
+    <table class="table table-striped table-border" id="tabla">}
       <caption class="titulo_tabla">TOP 10 RANKING DE JUGADORES </caption>
           <thead class="thead-dark">
               <tr>
@@ -11,6 +11,7 @@
                 </tr>
                 </thead>
                 <tbody>
+        <var>$contador=0;</var>
         @foreach ($usuarios as $usuario)
           <tr>
           <td>{{$usuario->userName}}</td>

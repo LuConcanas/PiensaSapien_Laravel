@@ -72,7 +72,7 @@ article a{
         .menu nav{
         position: absolute;
         z-index: 400;
-        background:rgba(35, 2, 124, 0.9);
+        background:rgba(189, 237, 0, 0.9);
         width: 70%;
          margin-left: -70%;
       }
@@ -538,9 +538,10 @@ background-color:#fff ;
    /*ranking*/
  }
  .contenedor_ranking{
-    width: 1000px;}
+    width: 100%;}
 #tabla{
   background-color: white;
+      width: 50%;
 }
 .titulo_tabla{
 caption-side: top;
@@ -549,12 +550,28 @@ font-weight: bold;
 color: red;
 }
 
-
-
 /*Vista jugando*/
 #contenidoJuego{
   font-family:  'Righteous', cursive;
   margin-top: 30px;
   border: 2px solid  #96c11f;
-  
+
  }
+ /*MEDIA QUERIES*/
+@media (max-width:768px){
+  .titulo_tabla{
+  caption-side: top;
+  font-size: 5vh;
+  font-weight: bold;
+  color: red;
+  }
+  #tabla{
+    background-color: white;
+  }
+  .datos{
+    font-size: 4vw;
+  }
+  #botonJugar button{
+    width: 30vw;
+  }
+}
