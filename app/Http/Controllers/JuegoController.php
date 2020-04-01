@@ -54,7 +54,7 @@ class JuegoController extends Controller
         }
        }
 
-       return view('jugando',compact('questions','answers'));
+       return view('jugando',compact('quiz','questions','answers'));
 
  }
 

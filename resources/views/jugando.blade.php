@@ -16,10 +16,10 @@
 <div id="respuestasX"style="display:none">
   {{$respuestas}}
 </div>
-<div class="card text-center" id="contenido">
+<div class="card text-center"style="width: 20rem;"  id="contenidoJuego">
 
   <div class="card-body">
-    <h5 class="card-title"></h5>
+  <h5 class="card-title" id="tituloQuiz">{{$quiz->Quizzes_name}}</h5>
     <div id="pregunta"></div>
     <div id="respuestas"></div>
   <input type="button" value="Responder" id="boton">
