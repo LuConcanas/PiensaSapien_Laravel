@@ -15,9 +15,7 @@
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                    <small id="errorUserName">
-
-                                    </small>
+                                    <small id="errorUserName" style="color:#FF4444;" > </small>
                                 @error('name')
                                     <span  class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -31,7 +29,7 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invad @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-                                 <small id="errorEmail"> </small>
+                                 <small id="errorEmail"style="color:#FF4444;" > </small>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -45,7 +43,7 @@
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                                <small id="errorPassword"></small>
+                                <small id="errorPassword"style="color:#FF4444;" ></small>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -59,17 +57,17 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                                <small id="errorRepassword"></small>
+                                <small id="errorRepassword" style="color:#FF4444;"></small>
                             </div>
                         </div>
                         {{-- Agregar avatar--}}
                         <div class="form-group row">
                             <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('Avatar') }}</label>
                             <div class="col-md-6">
-                            <input type="file" name="avatar" id="" value="" >
+                            <input type="file" name="avatar" id="" value="" required >
 
                             <br>
-                            <small id="errorAvatar"></small>
+                            <small id="errorAvatar" style="color:#FF4444;"67></small>
 
                             </div>
                         <div class="form-group row mb-0">

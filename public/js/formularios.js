@@ -91,13 +91,19 @@ window.addEventListener('load', function() {
         }
     })
    registerForm.addEventListener('submit', function() {
+    if(input.avatar.value === null){
+        // Si el campo está vacío creamos dentro del objeto de errores una key con el nombre de ese input con valor true
+        objetoDeErrores[input.name] = true;
+        // Mostramos el mensaje de error
+        input.nextElementSibling.innerHTML = 'El campo <b>' + input.avatar + '</b> es obligatorio';
+    }
     elementosDelForm.forEach(function (input) {
 		if (input.value.trim() === '') {
 			// Si el campo está vacío creamos dentro del objeto de errores una key con el nombre de ese input con valor true
 			objetoDeErrores[input.name] = true;
 			// Mostramos el mensaje de error
-			input.nextElementSibling.innerHTML = 'El campo <b>' + input.getAttribute('data-nombre') + '</b> es obligatorio';
-		}
+			input.nextElementSibling.innerHTML = 'El campo <b>' + input.getAttribute('data-name') + '</b> es obligatorio';
+        }
 	});
 	// Si el objeto que contiene los errores NO está vacío evitamos que se ENVIE el formulario
 	if (Object.keys(objetoDeErrores).length > 0) {
