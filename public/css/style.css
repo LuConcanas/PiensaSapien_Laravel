@@ -536,3 +536,14 @@ background-color:#fff ;
    font-family: 'Rajdhani', sans-serif;
 
  }
+ .contenedor_ranking{
+    width: 1000px;}
+#tabla{
+  background-color: white;
+}
+.titulo_tabla{
+caption-side: top;
+font-size: 50px;
+font-weight: bold;
+color: red;
+}

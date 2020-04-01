@@ -170,6 +170,10 @@ public function updateAvatarUser(request $req, $id){
   return redirect('/vistaUsuario');
 
 }
+public function verRanking(){
+  $usuarios = User::orderBy('puntaje','desc')->limit('10')->get();
+  return view('vistaRanking',compact('usuarios'));
+}
 
 
 }

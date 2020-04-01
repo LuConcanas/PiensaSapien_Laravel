@@ -18,7 +18,7 @@ Route::get('/FAQ', "indexController@verFAQ");
 //RUTA Registro
 Route::get('/registro', "indexController@verRegistro");
 //RUTA RANKING
-Route::get("/ranking", "indexController@verRanking");
+Route::get("/ranking", "usersController@verRanking");
 // RUTAS JUEGO(menu)
 Route::get("/categorias", "CategoriaController@listarCategorias");
 Route::get("/categorias/{id}", "quizzController@listarQuizzes");
