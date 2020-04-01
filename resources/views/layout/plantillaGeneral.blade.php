@@ -53,7 +53,7 @@
       @endif
   @else
     {{-- @if(Auth::user()->userAdministrador) --}}
-    <li><a href={{url('/categorias')}} style="text-decoration:none;">Crear</a></li>
+    <li><a href={{url('/categorias')}} style="text-decoration:none;">Juegos</a></li>
     {{-- @endif --}}
   <li class="nav-item dropdown" >
 

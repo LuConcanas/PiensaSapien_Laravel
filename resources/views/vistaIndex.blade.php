@@ -13,11 +13,16 @@
             Cuantas mas preguntas correctas respondas más puntos ganás.<br>
             Demostrá tu conocimiento y continuá aprendiendo mientras jugás!!</p>
         </article>
-        <article class="">
-            <div id="botonJugar" class="">
-              <button type="submit" name="button"> <a href={{url('/categorias')}}>Jugar</a> </button>
-            </div>
-          </article>
+        @guest
+          @if (Route::has('register'))
+            <article class="">
+                <div id="botonJugar" class="" >
+                  <button type="submit" name="button"> <a href={{url('/register')}}>Registrate</a> </button>
+                </div>
+              </article>
+          @endif
+        @endguest
+
         </div>
       </section>
 

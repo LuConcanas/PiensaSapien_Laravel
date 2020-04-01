@@ -155,7 +155,7 @@ background-color:#fff ;
         justify-content: center;
       }
       .titulo{
-        padding-top: 19vh;
+        padding-top: 14vh;
         padding-bottom: 10vh;
       }
       .titulo img{
@@ -189,7 +189,7 @@ background-color:#fff ;
         text-transform: uppercase;
         color: #FF8000;
         font-family: 'Rajdhani', sans-serif;
-        font-size:8vmin;
+        font-size:6vmin;
         padding-left: .5vmax;
         margin-top: -1vmin;
       }
