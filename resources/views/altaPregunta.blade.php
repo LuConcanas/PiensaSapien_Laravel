@@ -1,7 +1,8 @@
 @extends("/layout/plantillaGeneral")
 @section("Principal")
+@if (Auth::user()->userAdministrador)
 
-  {{-- Validacion y errores --}}
+{{-- Validacion y errores --}}
   @foreach ($errors->all() as $error)
   <div class="alert alert-danger">
       <ul>
@@ -52,7 +53,7 @@
   </form>
 </div>
 
-
+@endif
 
 
 @endsection

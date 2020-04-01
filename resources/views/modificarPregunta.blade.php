@@ -1,6 +1,6 @@
 @extends("/layout/plantillaGeneral")
 @section("Principal")
-
+{{-- FUERA DE USO!!! --}}
         <!-- MODIFICAR PREGUNTAS -->
         <article class="container preguntas">
             <div class= "row p-2">

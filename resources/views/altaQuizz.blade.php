@@ -1,5 +1,8 @@
 @extends("/layout/plantillaGeneral")
 @section("Principal")
+@if (Auth::user()->userAdministrador)
+
+
 <div class="row p-2 h4 row justify-content-center" style="color:white">
   <h3>Categoria: {{$categoria->nameCategoria}}</h3>
 </div>
@@ -47,6 +50,7 @@
           </form>
       </div>
   </article>
+  @endif
   @endsection
 
   {{-- <script type="text/javascript">

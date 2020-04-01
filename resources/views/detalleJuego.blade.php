@@ -2,7 +2,7 @@
 
 @extends("/layout/plantillaGeneral")
 @section("Principal")
-
+{{-- FUERA DE USO!!! --}}
     <!-- HISTORIAL JUEGO DEL USUARIO -->
       <article class="container-fluid">
         <div class="row justify-content-center m-1">

@@ -2,9 +2,9 @@
 @section("Principal")
 
 <!-- ALTA CATEGORIA -->
+@if (Auth::user()->userAdministrador)
 
-
-    <article class="">
+  <article class="">
       <div class="row p-2 h4 row justify-content-center" style="color:white">
           <form action="/agregarCategoria" method="post" enctype="multipart/form-data">
               @csrf
@@ -45,6 +45,6 @@
   </article>
 
 
-
+@endif
 
 @endsection
