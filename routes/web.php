@@ -24,7 +24,7 @@ Route::get("/categorias", "CategoriaController@listarCategorias");
 Route::get("/categorias/{id}", "quizzController@listarQuizzes");
 
 //rutas JUEGO
-Route::get("/jugando/{id}", "JuegoController@CargaJuego");
+Route::get("/jugando/{id}", "JuegoController@buscarQuizPorId");
 Route::get("/resultados", "JuegoController@Resultados");
 
 // ABM categorias
@@ -61,7 +61,7 @@ Route::post('/modificarFoto/{idUser}', 'usersController@updateAvatarUser');
 //Route::post('/modificarDatos', 'usersController@updateUser');
 
 
-//RUTAS JUEGO
-Route::get('/jugando/{id}', 'JuegoController@buscarQuizPorId');
-Route::get('/jugando/{id}', 'JuegoController@juego');
-//Route::get('/jugando', 'PreguntasController@listarPreguntas');
+// //RUTAS JUEGO
+// Route::get('/jugando/{id}', 'JuegoController@buscarQuizPorId');
+// Route::get('/jugando/{id}', 'JuegoController@juego');
+// //Route::get('/jugando', 'PreguntasController@listarPreguntas');
