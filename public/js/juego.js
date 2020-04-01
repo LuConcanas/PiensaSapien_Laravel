@@ -64,33 +64,32 @@ window.addEventListener('load', function() {
 
          responderPregunta();
 
-             function mostrarResultado(){
-                var resultado;      // para guardar el mensaje con el resultado
+         function mostrarResultado(){
+            var resultado;      // para guardar el mensaje con el resultado
 
-                switch(acertadas){
-                    case 0:
-                        resultado = 'No has acertado una sola pregunta, toca estudiar :-/';
-                        break;
-                    case 1:
-                        resultado = 'Bueno, al menos has acertado una pregunta :-)';
-                        break;
-                    case 2:
-                        resultado = 'Solo 2 preguntas acertadas de 5. Toca mejorar.';
-                        break;
-                    case 3:
-                        resultado = 'No está mal, 3/5 acertadas.';
-                        break;
-                    case 4:
-                        resultado = 'Muy bien, has acertado 4 preguntas :-)';
-                        break;
-                    case 5:
-                        resultado = '¡EXCELENTE, has acertado todas las preguntas! :-D';
-                        break;
-                }
-                document.getElementById('resolucion').innerHTML = resultado;
+            switch(acertadas){
+                case 0:
+                    resultado = 'Perdiste :-/';
+                    break;
+                case 1:
+                    resultado = 'Bueno, acertaste una sola :-)';
+                    break;
+                case 2:
+                    resultado = 'Solo 2 preguntas acertadas de 5.';
+                    break;
+                case 3:
+                    resultado = 'No está mal, 3/5 acertadas.';
+                    break;
+                case 4:
+                    resultado = 'Muy bien, acertaste 4 preguntas :-)';
+                    break;
+                case 5:
+                    resultado = '¡EXCELENTE, acertaste todas las preguntas! :-D';
+                    break;
+            }
+            document.getElementById('resolucion').innerHTML = resultado;
 
-         }
-
+     }
     document.getElementById('boton').addEventListener('click', function(){
     let respuesta = $("input[type=radio]:checked").val();
 

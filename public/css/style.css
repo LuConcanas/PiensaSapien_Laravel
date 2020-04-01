@@ -535,6 +535,7 @@ background-color:#fff ;
  #vistaUser {
    font-family: 'Rajdhani', sans-serif;
 
+   /*ranking*/
  }
  .contenedor_ranking{
     width: 1000px;}
@@ -547,3 +548,13 @@ font-size: 50px;
 font-weight: bold;
 color: red;
 }
+
+
+
+/*Vista jugando*/
+#contenidoJuego{
+  font-family:  'Righteous', cursive;
+  margin-top: 30px;
+  border: 2px solid  #96c11f;
+  
+ }
