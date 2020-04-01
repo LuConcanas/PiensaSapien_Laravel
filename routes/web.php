@@ -8,7 +8,6 @@
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
-|
 */
 //Rutas del Index(Este era el home de la etapa anterior)
 Route::get('/', "indexController@verIndex");
@@ -18,6 +17,8 @@ Route::get('/contacto', "indexController@verContacto");
 Route::get('/FAQ', "indexController@verFAQ");
 //RUTA Registro
 Route::get('/registro', "indexController@verRegistro");
+//RUTA RANKING
+Route::get("/ranking", "indexController@verRanking");
 // RUTAS JUEGO(menu)
 Route::get("/categorias", "CategoriaController@listarCategorias");
 Route::get("/categorias/{id}", "quizzController@listarQuizzes");

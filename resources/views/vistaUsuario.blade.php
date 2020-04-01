@@ -5,7 +5,7 @@
        <div id="contenedorUser">
        <div class="text-center" id="fotoUser">
         @if($usuario->avatar == "")
-        <img class="card-img" src="/img/Foto_Usuario.png" class="rounded-circle" alt="avatar">
+        <img src="/img/Foto_Usuario.png" class="rounded-circle" alt="avatar">
         <!--<img src="../../public/img/Foto_Usuario.png" alt="avatar" class="rounded-circle" >
         --><!-- Saco temporalmente esto para ver como se ve una imagen: "storage/avatars/{{$usuario->avatar}}"-->
         @elseif($usuario->avatar !== null)

@@ -22,8 +22,11 @@ class indexController extends Controller
     public function verRegistro(){
       return view("auth/register");
     }
+    public function verRanking(){
+      return view("vistaRanking");
+    }
 
-    
+
 
 
 }

@@ -15,7 +15,7 @@ class AddUserAdministradorToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //Agreago columna userAdministrador, es un booleano para saber si alguin puede subir preguntas o no.
-            $table->integer('userAdministrador')->after('avatar');
+            $table->boolean('userAdministrador')->after('avatar');
 
         });
     }

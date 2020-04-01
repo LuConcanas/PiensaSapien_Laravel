@@ -20,7 +20,6 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('puntaje');
-            $table->integer('rankingPosition');
             $table->string('avatar');
             $table->rememberToken();
             $table->timestamps();
@@ -39,6 +38,6 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
-        
+
     }
 }

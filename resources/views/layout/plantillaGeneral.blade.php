@@ -32,7 +32,7 @@
         <li><a href={{url('/')}} style="text-decoration:none;">Home</a></li>
         <li><a href={{url('/contacto')}} style="text-decoration:none;">Contacto</a></li>
         <li><a href={{url('/FAQ')}} style="text-decoration:none;">F.A.Q.</a></li>
-        <li><a href={{url('/categorias')}} style="text-decoration:none;">Juego</a></li>
+        <li><a href={{url('/ranking')}} style="text-decoration:none;">Ranking</a></li>
       <!-- <?php if (isset($_SESSION)):?>
             <li><a href={{url('/register')}} style="text-decoration:none;">Registro</a></li>
              <li><a href={{url('/login')}} style="text-decoration:none;">Iniciar sesion</a></li>
@@ -52,7 +52,9 @@
           </li>
       @endif
   @else
-
+    {{-- @if(Auth::user()->userAdministrador) --}}
+    <li><a href={{url('/categorias')}} style="text-decoration:none;">Crear</a></li>
+    {{-- @endif --}}
   <li class="nav-item dropdown" >
 
     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
