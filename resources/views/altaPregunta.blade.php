@@ -16,7 +16,6 @@
 </div>
 {{-- Formulario para nueva pregunta --}}
 <div class=""style="width:50%;margin:0 auto;padding: 1rem;background-color:grey;">
-
   <form class="" action="" method="post" enctype="multipart/form-data">
     @csrf
       <div class="form-group">

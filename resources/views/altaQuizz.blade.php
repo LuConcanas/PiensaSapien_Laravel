@@ -39,6 +39,7 @@
               </button>
               @if (session()->has('notif'))
                 <button type="button" name="button" class="btn btn-dark">
+
                   <a href={{url("/nuevaPregunta/$quizz->id")}} style="font-size:14px; text-decoration:none;color:white">Siguiente</a>
                 </button>
               @endif
