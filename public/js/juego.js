@@ -15,7 +15,7 @@ window.addEventListener('load', function() {
      var preguntas = preguntasBeta
 
      var respuestas = respuestasBeta
-
+     var indicePregunta = 0;
      var formuladas = 0;
      var acertadas = 0;
     var indiceRespuestaCorrecta;
@@ -27,11 +27,8 @@ window.addEventListener('load', function() {
     */
     //funcion para comenzar el juego
     function responderPregunta(){
-
-        //Saco un numero aleatorio para obtener una pregunta aleatoria
-        var indiceAleatorio = Math.floor(Math.random()*preguntas.length);
         //En caso de tener las preguntas en un array y las respuestas en otro array, se hace esto asi la posicion de la pregunta en el array preguntas coincide con la posicion de las respuestas en el array repuestas.
-        var respuestasPosibles =  respuestas[indiceAleatorio];
+        var respuestasPosibles =  respuestas[indicePregunta];
 
         var posiciones = [0, 1, 2, 3];
         var respuestasReordenadas = [];
@@ -60,7 +57,8 @@ window.addEventListener('load', function() {
 
         //Ingreso la pregunta y las posibles respuestas al hmtl
         document.getElementById("respuestas").innerHTML = textoDeRespuestas;
-        document.getElementById("pregunta").innerHTML = preguntas[indiceAleatorio];
+        document.getElementById("pregunta").innerHTML = preguntas[indicePregunta]
+        indicePregunta++
         formuladas++;
          }
 

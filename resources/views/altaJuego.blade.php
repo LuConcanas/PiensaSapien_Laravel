@@ -1,5 +1,7 @@
 @extends("/layout/plantillaGeneral")
 @section("Principal")
+@if (Auth::user()->userAdministrador)
+{{-- FUERA DE USO!!! --}}
 
 <!-- ALTA JUEGO -->
 
@@ -78,6 +80,6 @@
         </article>
         <br>
 
-
+@endif
 
 @endsection;

@@ -1,6 +1,6 @@
 @extends("/layout/plantillaGeneral")
 @section("Principal")
-
+{{-- FUERA DE USO --}}
         <!-- GIF APLAUSOS -->
         <article class="container">
             <div class="row justify-content-center m-4">
