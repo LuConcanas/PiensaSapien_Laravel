@@ -1,6 +1,6 @@
 ## Piensa-Sapien!
 
- Piensa-Sapien! Es una pagina web de preguntas y respuestas que construimos en equipo, desde cero, en un intenso viaje de aprendizaje de las diversas herramientas propuestas.
+ Piensa-Sapien! Es una pagina web de preguntas y respuestas que construimos en equipo, desde cero, en un intenso viaje de aprendizaje de las diversas herramientas propuestas por los profesores de Digital House.
 
 ## Sobre las herramientas utilizadas
 
